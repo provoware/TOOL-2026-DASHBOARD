@@ -9,7 +9,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T04 (P0) app.py Einstieg + leeres Fenster :: GUI startet :: Fenster-Titel 'ModulTool' erscheint
 - [x] T05 (P0) logger.py Basis :: Einheitlicher Logger :: Logdatei erstellt + erste Zeile geschrieben
 - [x] T06 (P0) config.py Konstanten :: Zentrale Pfade/Version :: Versionkonstante + Pfadfunktionen nutzbar
-- [ ] T07 (P0) dummy daten anlegen :: Nie leer Start :: data/defaults/*.json existieren (genres.json, quotes.json)
+- [x] T07 (P0) dummy daten anlegen :: Nie leer Start :: data/defaults/*.json existieren (genres.json, quotes.json)
 - [ ] T08 (P0) bootstrap Selfcheck Stub :: Vorstart Prüfung :: Fehlende defaults werden erzeugt (Logeintrag)
 - [ ] T09 (P0) base_module.py Skeleton :: Module Vertrag :: Klasse BaseModule kompiliert
 - [ ] T10 (P0) genres_module Grund :: Erstes Modul UI + Add :: Genre hinzufügen erscheint in Liste
