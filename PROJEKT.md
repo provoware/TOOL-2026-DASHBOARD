@@ -8,6 +8,7 @@ Diese Datei sammelt in einfacher Sprache alle wichtigen Infos zum **ModulTool**.
 - Grund-Ordnergerüst (`modultool`, `data`, `modules`, `tests`, `docs`, `scripts`).
 - Detaillierte Zielbeschreibung in `ZIEL-AGENTS.md`.
 - Erweiterte Planung in `ZIEL_UND_ERWEITERUNGS_AGENTS.md`.
+- Minimales `requirements.txt` mit `pyside6` und `pytest` angelegt.
 
 ## Vollbeschreibung
 
@@ -74,6 +75,12 @@ Damit sollte ein leeres Fenster erscheinen. Weitere Module folgen Schritt für S
 
   ```bash
   deactivate
+  ```
+
+* **Installierte Pakete prüfen** (Kontrolle):
+
+  ```bash
+  pip list
   ```
 
 Diese einfachen Befehle helfen beim Einstieg und bei einer sauberen Umgebung.
