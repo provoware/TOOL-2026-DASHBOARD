@@ -10,3 +10,4 @@ T09 BaseModule Geruest :: 2025-07-20
 T10 GenresModule Grund :: 2025-07-20
 T11 Module Loader Discovery :: 2025-07-20
 T12 Dashboard Grid Cards :: 2025-07-20
+T13 Sidebar Navigation :: 2025-07-20
