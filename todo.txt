@@ -12,3 +12,24 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 Weitere Punkte stehen in der Datei OFFEN.md.
 
 (Stand: 2025-07-20)
+# TODO-Liste
+- [x] T01 Grund-Ordnergerüst anlegen
+- [x] T02 pyproject/requirements minimal
+- [ ] T03 setup.sh minimal
+- [ ] T04 app.py Einstieg + leeres Fenster
+- [ ] T05 logger.py Basis
+- [ ] T06 config.py Konstanten
+- [ ] T07 dummy daten anlegen
+- [ ] T08 bootstrap Selfcheck Stub
+- [ ] T09 base_module.py Skeleton
+- [ ] T10 genres_module Grund
+- [ ] T11 module_loader Discovery
+- [ ] T12 dashboard Grid Cards
+- [ ] T13 sidebar Navigation
+- [ ] T14 statusbar Basis
+- [ ] T15 autosave manager minimal
+- [ ] T16 backup manager basic
+- [ ] T17 error handler stub
+- [ ] T18 theme loader dark
+- [ ] T19 help_engine stub
+- [ ] T20 tests basis
