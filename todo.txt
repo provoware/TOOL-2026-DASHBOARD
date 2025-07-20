@@ -1,6 +1,6 @@
 # TODO-Liste
 - [x] T01 Grund-Ordnergerüst anlegen
-- [ ] T02 pyproject/requirements minimal
+- [x] T02 pyproject/requirements minimal
 - [ ] T03 setup.sh minimal
 - [ ] T04 app.py Einstieg + leeres Fenster
 - [ ] T05 logger.py Basis
