@@ -6,21 +6,21 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 - [x] Minimalanforderungen in `pyproject.toml` oder `requirements.txt` erledigt
 - [x] Setup-Skript `setup.sh` erstellen
 - [x] Erste GUI mit leerem Fenster starten
-- [ ] Logging und Konfiguration vorbereiten
-- [ ] Dummy-Daten erzeugen
+- [x] Logging und Konfiguration vorbereiten
+- [x] Dummy-Daten erzeugen
 
 Weitere Punkte stehen in der Datei OFFEN.md.
 
-(Stand: 2025-07-20)
+ (Stand: 2025-07-20)
 # TODO-Liste
 - [x] T01 Grund-Ordnergerüst anlegen
 - [x] T02 pyproject/requirements minimal
-- [ ] T03 setup.sh minimal
-- [ ] T04 app.py Einstieg + leeres Fenster
-- [ ] T05 logger.py Basis
-- [ ] T06 config.py Konstanten
-- [ ] T07 dummy daten anlegen
-- [ ] T08 bootstrap Selfcheck Stub
+- [x] T03 setup.sh minimal
+- [x] T04 app.py Einstieg + leeres Fenster
+- [x] T05 logger.py Basis
+- [x] T06 config.py Konstanten
+- [x] T07 dummy daten anlegen
+- [x] T08 bootstrap Selfcheck Stub
 - [ ] T09 base_module.py Skeleton
 - [ ] T10 genres_module Grund
 - [ ] T11 module_loader Discovery

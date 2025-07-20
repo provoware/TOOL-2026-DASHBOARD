@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QApplication, QMainWindow
 import sys
 
+
 class MainWindow(QMainWindow):
     """Simple start window for the tool."""
 
