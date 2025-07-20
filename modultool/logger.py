@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 from .config import get_log_dir
 
 LOG_DIR = get_log_dir()

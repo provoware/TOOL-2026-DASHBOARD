@@ -8,6 +8,7 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 - [x] Erste GUI mit leerem Fenster starten
 - [x] Logging und Konfiguration vorbereiten
 - [x] Dummy-Daten erzeugen
+- [ ] Dummy-Daten erzeugen
 
 Weitere Punkte stehen in der Datei OFFEN.md.
 
@@ -21,6 +22,8 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T06 config.py Konstanten
 - [x] T07 dummy daten anlegen
 - [x] T08 bootstrap Selfcheck Stub
+- [ ] T07 dummy daten anlegen
+- [ ] T08 bootstrap Selfcheck Stub
 - [ ] T09 base_module.py Skeleton
 - [ ] T10 genres_module Grund
 - [ ] T11 module_loader Discovery
