@@ -12,7 +12,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T07 (P0) dummy daten anlegen :: Nie leer Start :: data/defaults/*.json existieren (genres.json, quotes.json)
 - [x] T08 (P0) bootstrap Selfcheck Stub :: Vorstart Prüfung :: Fehlende defaults werden erzeugt (Logeintrag)
 - [x] T09 (P0) base_module.py Skeleton :: Module Vertrag :: Klasse BaseModule kompiliert
-- [ ] T10 (P0) genres_module Grund :: Erstes Modul UI + Add :: Genre hinzufügen erscheint in Liste
+- [x] T10 (P0) genres_module Grund :: Erstes Modul UI + Add :: Genre hinzufügen erscheint in Liste
 - [ ] T11 (P0) module_loader Discovery :: Automatische Modul-Erkennung :: genres_module wird geladen ohne ImportError
 - [ ] T12 (P0) dashboard Grid Cards :: 3x3 Platzhalter sichtbar :: 9 Cards, Titel, Klick loggt Info
 - [ ] T13 (P0) sidebar Navigation :: Linke Leiste aktiv :: Buttons reagieren (Log)

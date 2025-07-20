@@ -22,7 +22,7 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T07 dummy daten anlegen
 - [x] T08 bootstrap Selfcheck Stub
 - [x] T09 base_module.py Skeleton
-- [ ] T10 genres_module Grund
+- [x] T10 genres_module Grund
 - [ ] T11 module_loader Discovery
 - [ ] T12 dashboard Grid Cards
 - [ ] T13 sidebar Navigation
