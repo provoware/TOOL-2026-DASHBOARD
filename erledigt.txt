@@ -8,3 +8,4 @@ T07 Dummy-Daten angelegt :: 2025-07-20
 T08 Selfcheck erzeugt Defaults :: 2025-07-20
 T09 BaseModule Geruest :: 2025-07-20
 T10 GenresModule Grund :: 2025-07-20
+T11 Module Loader Discovery :: 2025-07-20
