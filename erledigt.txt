@@ -3,3 +3,4 @@ T02 Minimalanforderungen requirements.txt :: 2025-07-20
 T03 Setup-Skript minimal :: 2025-07-20
 T04 Leeres Fenster gestartet :: 2025-07-20
 T05 Logger eingerichtet :: 2025-07-20
+T06 Konfigurationspfade zentral :: 2025-07-20

@@ -1,7 +1,8 @@
 import logging
 from pathlib import Path
+from .config import get_log_dir
 
-LOG_DIR = Path.cwd() / "logs"
+LOG_DIR = get_log_dir()
 LOG_DIR.mkdir(exist_ok=True)
 LOG_FILE = LOG_DIR / "modultool.log"
 

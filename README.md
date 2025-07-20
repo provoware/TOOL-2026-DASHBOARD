@@ -18,3 +18,6 @@ pytest -q
 ```
 
 Die Logdatei findest du im Ordner `logs/modultool.log`.
+
+Alle wichtigen Pfade liegen zentral in `modultool/config.py`. Dort steht auch die
+aktuelle Versionsnummer (`APP_VERSION`).
