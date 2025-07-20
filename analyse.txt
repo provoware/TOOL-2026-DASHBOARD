@@ -8,7 +8,7 @@ Gefundene Probleme
 
 * **Wiederholte Einträge** in `OFFEN.md`, `todo.txt` und `erledigt.txt` wurden bereinigt.
 * **Doppelte Abhängigkeit** `pyside6` in `requirements.txt` entfernt (jetzt nur noch `PySide6`).
-* **fortschritt.txt** enthielt eine überflüssige Zeile und zeigt nun korrekt `Fortschritt: 20% (4/20 Basis-Tasks erledigt)`.
+* **fortschritt.txt** enthielt eine überflüssige Zeile und zeigt nun korrekt `Fortschritt: 25% (5/20 Basis-Tasks erledigt)`.
 * Tests scheiterten, wenn `PySide6` fehlte. Installation per:
   ```bash
   pip install PySide6
@@ -35,8 +35,19 @@ Empfehlungen für Einsteiger
    python app.py
    ```
 
+Weiterführende Tipps
+--------------------
+
+* Die erzeugte **Logdatei** findest du im Ordner `logs` unter dem Namen `modultool.log`. Dort steht in der ersten Zeile "Logger initialisiert".
+* Bei Fehlermeldungen hilft oft ein Blick in diese Datei. Sie enthält Protokolle ("Logs") aller Aktionen.
+* Möchtest du die Testergebnisse zusätzlich speichern, nutze:
+  ```bash
+  pytest -q | tee last_test.log
+  ```
+  Der Befehl `tee` kopiert die Ausgabe in eine Datei und zeigt sie gleichzeitig im Terminal an.
+
 Weitere Planung
 ---------------
 
-* Nächster Task laut `OFFEN.md` ist **T04** (leeres Fenster erneut prüfen). Danach folgt die Implementierung des Loggers (T05).
+* Nächster Task laut `OFFEN.md` ist **T06** (Konstanten verwalten). Der Logger (T05) ist erledigt.
 * README ist sehr kurz und sollte eine Installationsanleitung erhalten.

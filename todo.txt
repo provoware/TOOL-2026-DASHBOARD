@@ -16,8 +16,8 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T01 Grund-Ordnergerüst anlegen
 - [x] T02 pyproject/requirements minimal
 - [x] T03 setup.sh minimal
-- [ ] T04 app.py Einstieg + leeres Fenster
-- [ ] T05 logger.py Basis
+- [x] T04 app.py Einstieg + leeres Fenster
+- [x] T05 logger.py Basis
 - [ ] T06 config.py Konstanten
 - [ ] T07 dummy daten anlegen
 - [ ] T08 bootstrap Selfcheck Stub
