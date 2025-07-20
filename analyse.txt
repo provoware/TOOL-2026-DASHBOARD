@@ -1,0 +1,54 @@
+Projektanalyse (20.07.2025)
+==========================
+
+Dieses Dokument fasst den aktuellen Zustand des Repositoriums zusammen. Es dient als Prüfliste vor einem Release.
+
+Gefundene Probleme
+------------------
+
+* **Wiederholte Einträge** in `OFFEN.md`, `todo.txt` und `erledigt.txt` wurden bereinigt.
+* **Doppelte Abhängigkeit** `pyside6` in `requirements.txt` entfernt (jetzt nur noch `PySide6`).
+* **fortschritt.txt** enthielt eine überflüssige Zeile und zeigt nun korrekt `Fortschritt: 30% (6/20 Basis-Tasks erledigt)`.
+* Tests scheiterten, wenn `PySide6` fehlte. Installation per:
+  ```bash
+  pip install PySide6
+  ```
+
+Empfehlungen für Einsteiger
+-----------------------------
+
+1. **Virtuelle Umgebung** (isolierte Python-Umgebung) erstellen und aktivieren:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+2. **Abhängigkeiten installieren** (benötigte Pakete):
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Tests starten** (Prüfung):
+   ```bash
+   pytest -q
+   ```
+4. **Programm ausführen**:
+   ```bash
+   python app.py
+   ```
+
+Weiterführende Tipps
+--------------------
+
+* Die erzeugte **Logdatei** findest du im Ordner `logs` unter dem Namen `modultool.log`. Dort steht in der ersten Zeile "Logger initialisiert".
+* Bei Fehlermeldungen hilft oft ein Blick in diese Datei. Sie enthält Protokolle ("Logs") aller Aktionen.
+* Möchtest du die Testergebnisse zusätzlich speichern, nutze:
+  ```bash
+  pytest -q | tee last_test.log
+  ```
+  Der Befehl `tee` kopiert die Ausgabe in eine Datei und zeigt sie gleichzeitig im Terminal an.
+* Alle wichtigen Pfade sind nun in `modultool/config.py` gesammelt. Dort findest du auch die aktuelle **Versionsnummer** (`APP_VERSION`).
+
+Weitere Planung
+---------------
+
+* Nächster Task laut `OFFEN.md` ist **T07** (Dummy-Daten). Die Konfigurationsdatei (T06) wurde umgesetzt.
+* README ist sehr kurz und sollte eine Installationsanleitung erhalten.
