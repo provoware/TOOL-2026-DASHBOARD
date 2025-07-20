@@ -6,6 +6,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
+from PySide6.QtWidgets import QApplication  # noqa: E402
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget  # noqa: E402
 from modultool.logger import logger  # noqa: E402
 from app import MainWindow  # noqa: E402
