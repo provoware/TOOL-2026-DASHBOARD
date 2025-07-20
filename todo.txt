@@ -24,7 +24,7 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T09 base_module.py Skeleton
 - [x] T10 genres_module Grund
 - [x] T11 module_loader Discovery
-- [ ] T12 dashboard Grid Cards
+- [x] T12 dashboard Grid Cards
 - [ ] T13 sidebar Navigation
 - [ ] T14 statusbar Basis
 - [ ] T15 autosave manager minimal
