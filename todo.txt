@@ -2,11 +2,13 @@
 
 Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md).
 
-- Grund-Ordnergerüst anlegen
-- Minimalanforderungen in `pyproject.toml` oder `requirements.txt`
-- Setup-Skript `setup.sh` erstellen
-- Erste GUI mit leerem Fenster starten
-- Logging und Konfiguration vorbereiten
-- Dummy-Daten erzeugen
+- [x] Grund-Ordnergerüst anlegen
+- [ ] Minimalanforderungen in `pyproject.toml` oder `requirements.txt`
+- [ ] Setup-Skript `setup.sh` erstellen
+- [ ] Erste GUI mit leerem Fenster starten
+- [ ] Logging und Konfiguration vorbereiten
+- [ ] Dummy-Daten erzeugen
 
 Weitere Punkte stehen in der Datei OFFEN.md.
+
+(Stand: 2025-07-20)

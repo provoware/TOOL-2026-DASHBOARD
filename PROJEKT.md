@@ -5,6 +5,7 @@ Diese Datei sammelt in einfacher Sprache alle wichtigen Infos zum **ModulTool**.
 ## Bisher umgesetzt
 
 - Grundstruktur des Repositories mit Dokumenten.
+- Grund-Ordnergerüst (`modultool`, `data`, `modules`, `tests`, `docs`, `scripts`).
 - Detaillierte Zielbeschreibung in `ZIEL-AGENTS.md`.
 - Erweiterte Planung in `ZIEL_UND_ERWEITERUNGS_AGENTS.md`.
 
@@ -59,4 +60,21 @@ Die folgenden Schritte zeigen, wie man das Projekt lokal ausprobiert. Alle Befeh
    ```
 
 Damit sollte ein leeres Fenster erscheinen. Weitere Module folgen Schritt für Schritt.
+
+## Weiterführende Tipps
+
+* **Ordner prüfen**: Mit `ls -R` (Inhalt auflisten) sieht man das gesamte Projektgerüst.
+* **Pip aktualisieren** (Paketverwaltung):
+
+  ```bash
+  python -m pip install --upgrade pip
+  ```
+
+* **Virtuelle Umgebung verlassen**:
+
+  ```bash
+  deactivate
+  ```
+
+Diese einfachen Befehle helfen beim Einstieg und bei einer sauberen Umgebung.
 
