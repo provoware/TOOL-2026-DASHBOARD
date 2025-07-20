@@ -20,12 +20,12 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T05 logger.py Basis
 - [x] T06 config.py Konstanten
 - [x] T07 dummy daten anlegen
-- [ ] T08 bootstrap Selfcheck Stub
-- [ ] T09 base_module.py Skeleton
-- [ ] T10 genres_module Grund
-- [ ] T11 module_loader Discovery
-- [ ] T12 dashboard Grid Cards
-- [ ] T13 sidebar Navigation
+- [x] T08 bootstrap Selfcheck Stub
+- [x] T09 base_module.py Skeleton
+- [x] T10 genres_module Grund
+- [x] T11 module_loader Discovery
+- [x] T12 dashboard Grid Cards
+- [x] T13 sidebar Navigation
 - [ ] T14 statusbar Basis
 - [ ] T15 autosave manager minimal
 - [ ] T16 backup manager basic

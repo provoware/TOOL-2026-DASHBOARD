@@ -49,3 +49,14 @@ echo '  "Metal"' >> data/defaults/genres.json
   ```bash
   pytest -q | tee last_test.log
   ```
+* **Selfcheck starten** (kurzer Testlauf):
+  ```bash
+  python -m modultool.selfcheck
+  ```
+  Das Skript erstellt fehlende Dummy-Daten und schreibt eine Meldung ins Log.
+* **Sidebar testen** (linke Navigationsleiste):
+  ```bash
+  python app.py
+  ```
+  Klicke auf die Knöpfe "Nav 1" bis "Nav 3". In der Logdatei siehst du dann den Eintrag "Nav 1 clicked" usw.
+

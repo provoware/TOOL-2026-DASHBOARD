@@ -10,12 +10,12 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T05 (P0) logger.py Basis :: Einheitlicher Logger :: Logdatei erstellt + erste Zeile geschrieben
 - [x] T06 (P0) config.py Konstanten :: Zentrale Pfade/Version :: Versionkonstante + Pfadfunktionen nutzbar
 - [x] T07 (P0) dummy daten anlegen :: Nie leer Start :: data/defaults/*.json existieren (genres.json, quotes.json)
-- [ ] T08 (P0) bootstrap Selfcheck Stub :: Vorstart Prüfung :: Fehlende defaults werden erzeugt (Logeintrag)
-- [ ] T09 (P0) base_module.py Skeleton :: Module Vertrag :: Klasse BaseModule kompiliert
-- [ ] T10 (P0) genres_module Grund :: Erstes Modul UI + Add :: Genre hinzufügen erscheint in Liste
-- [ ] T11 (P0) module_loader Discovery :: Automatische Modul-Erkennung :: genres_module wird geladen ohne ImportError
-- [ ] T12 (P0) dashboard Grid Cards :: 3x3 Platzhalter sichtbar :: 9 Cards, Titel, Klick loggt Info
-- [ ] T13 (P0) sidebar Navigation :: Linke Leiste aktiv :: Buttons reagieren (Log)
+- [x] T08 (P0) bootstrap Selfcheck Stub :: Vorstart Prüfung :: Fehlende defaults werden erzeugt (Logeintrag)
+- [x] T09 (P0) base_module.py Skeleton :: Module Vertrag :: Klasse BaseModule kompiliert
+- [x] T10 (P0) genres_module Grund :: Erstes Modul UI + Add :: Genre hinzufügen erscheint in Liste
+- [x] T11 (P0) module_loader Discovery :: Automatische Modul-Erkennung :: genres_module wird geladen ohne ImportError
+- [x] T12 (P0) dashboard Grid Cards :: 3x3 Platzhalter sichtbar :: 9 Cards, Titel, Klick loggt Info
+- [x] T13 (P0) sidebar Navigation :: Linke Leiste aktiv :: Buttons reagieren (Log)
 - [ ] T14 (P0) statusbar Basis :: Statuszeile zeigt Meldungen :: Nach Aktion Text aktualisiert
 - [ ] T15 (P0) autosave manager minimal :: Änderungen persistieren :: genres.json aktualisiert nach Add
 - [ ] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
