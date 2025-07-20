@@ -3,8 +3,8 @@ Legende: P0 = kritisch Basis, P1 = Aufbau, P2 = Komfort, S = Stretch
 Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 
 ## P0 Bootstrap & Struktur
-- [ ] T01 (P0) Grund-Ordnergerüst anlegen :: Verzeichnisstruktur steht :: Alle Verzeichnisse vorhanden, leerer Startcommit
-- [ ] T02 (P0) pyproject/requirements minimal :: Basisabhängigkeiten festgelegt :: Datei vorhanden, enthält pyside6 + pytest
+- [x] T01 (P0) Grund-Ordnergerüst anlegen :: Verzeichnisstruktur steht :: Alle Verzeichnisse vorhanden, leerer Startcommit
+- [x] T02 (P0) pyproject/requirements minimal :: Basisabhängigkeiten festgelegt :: Datei vorhanden, enthält pyside6 + pytest
 - [ ] T03 (P0) setup.sh minimal :: Ein-Klick-Setup venv + install :: Ausführbar, erzeugt .venv, startet ohne Crash
 - [ ] T04 (P0) app.py Einstieg + leeres Fenster :: GUI startet :: Fenster-Titel 'ModulTool' erscheint
 - [ ] T05 (P0) logger.py Basis :: Einheitlicher Logger :: Logdatei erstellt + erste Zeile geschrieben

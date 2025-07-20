@@ -1,0 +1,2 @@
+T01 Grund-Ordnergerüst anlegen 2025-07-20
+T02 pyproject/requirements minimal 2025-07-20
