@@ -21,7 +21,7 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T06 config.py Konstanten
 - [x] T07 dummy daten anlegen
 - [x] T08 bootstrap Selfcheck Stub
-- [ ] T09 base_module.py Skeleton
+- [x] T09 base_module.py Skeleton
 - [ ] T10 genres_module Grund
 - [ ] T11 module_loader Discovery
 - [ ] T12 dashboard Grid Cards

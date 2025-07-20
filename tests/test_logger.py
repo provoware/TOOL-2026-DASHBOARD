@@ -16,10 +16,10 @@ def test_log_file_created(tmp_path, monkeypatch):
     assert log_file.exists()
     content = log_file.read_text(encoding="utf-8")
     assert "Logger initialisiert" in content.splitlines()[0]
-    module = importlib.import_module('modultool.logger')
-    module.logger.info('Testeintrag')
+    module = importlib.import_module("modultool.logger")
+    module.logger.info("Testeintrag")
     logging.shutdown()
     log_file = module.LOG_FILE
     assert log_file.exists()
-    content = log_file.read_text(encoding='utf-8')
-    assert 'Logger initialisiert' in content.splitlines()[0]
+    content = log_file.read_text(encoding="utf-8")
+    assert "Logger initialisiert" in content.splitlines()[0]
