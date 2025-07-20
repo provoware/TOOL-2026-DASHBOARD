@@ -6,13 +6,12 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-
-from PySide6.QtWidgets import QApplication
-from app import MainWindow
+from PySide6.QtWidgets import QApplication  # noqa: E402
+from app import MainWindow  # noqa: E402
 
 
 def test_window_title():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
     app = QApplication.instance() or QApplication([])
     window = MainWindow()
     assert window.windowTitle() == "ModulTool"

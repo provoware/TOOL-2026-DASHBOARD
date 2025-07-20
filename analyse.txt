@@ -8,6 +8,7 @@ Gefundene Probleme
 
 * **Wiederholte Einträge** in `OFFEN.md`, `todo.txt` und `erledigt.txt` wurden bereinigt.
 * **Doppelte Abhängigkeit** `pyside6` in `requirements.txt` entfernt (jetzt nur noch `PySide6`).
+* **fortschritt.txt** enthielt eine überflüssige Zeile und zeigt nun korrekt `Fortschritt: 40% (8/20 Basis-Tasks erledigt)`.
 * **fortschritt.txt** enthielt eine überflüssige Zeile und zeigt nun korrekt `Fortschritt: 30% (6/20 Basis-Tasks erledigt)`.
 * Tests scheiterten, wenn `PySide6` fehlte. Installation per:
   ```bash
@@ -46,9 +47,22 @@ Weiterführende Tipps
   ```
   Der Befehl `tee` kopiert die Ausgabe in eine Datei und zeigt sie gleichzeitig im Terminal an.
 * Alle wichtigen Pfade sind nun in `modultool/config.py` gesammelt. Dort findest du auch die aktuelle **Versionsnummer** (`APP_VERSION`).
+* Prüfe die Dummy-Daten im Ordner `data/defaults` bei Bedarf so:
+  ```bash
+  cat data/defaults/genres.json
+  ```
+  Damit siehst du, welche Beispielgenres hinterlegt sind.
+
+* Starte den Selfcheck manuell so:
+  ```bash
+  python -m modultool.selfcheck
+  ```
+  Das Skript legt fehlende Dateien an und schreibt eine Meldung ins Log.
 
 Weitere Planung
 ---------------
 
+* T08 (Selfcheck) ist erledigt. Als Nächstes steht **T09** (base_module Skeleton) an.
+* README enthält jetzt einen Hinweis auf den Selfcheck.
 * Nächster Task laut `OFFEN.md` ist **T07** (Dummy-Daten). Die Konfigurationsdatei (T06) wurde umgesetzt.
 * README ist sehr kurz und sollte eine Installationsanleitung erhalten.
