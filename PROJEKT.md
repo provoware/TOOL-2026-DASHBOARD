@@ -9,6 +9,7 @@ Diese Datei sammelt in einfacher Sprache alle wichtigen Infos zum **ModulTool**.
 - Detaillierte Zielbeschreibung in `ZIEL-AGENTS.md`.
 - Erweiterte Planung in `ZIEL_UND_ERWEITERUNGS_AGENTS.md`.
 - Minimales `requirements.txt` mit `pyside6` und `pytest` angelegt.
+- Setup-Skript `setup.sh` erstellt (legt virtuelle Umgebung an und installiert Pakete).
 
 ## Vollbeschreibung
 
@@ -35,26 +36,31 @@ Die folgenden Schritte zeigen, wie man das Projekt lokal ausprobiert. Alle Befeh
    cd modern-tool
    ```
 
-2. **Virtuelle Umgebung** (abgeschottete Python-Installation) erstellen und aktivieren
+2. **Setup-Skript ausführen** (legt automatisch die virtuelle Umgebung an und installiert die Pakete)
 
    ```bash
-   python3 -m venv .venv
+   bash setup.sh
+   ```
+
+3. **Virtuelle Umgebung manuell starten** (falls sie schon existiert)
+
+   ```bash
    source .venv/bin/activate
    ```
 
-3. **Abhängigkeiten installieren** (benötigte Pakete)
+4. **Pakete manuell installieren** (falls das Skript nicht genutzt wurde)
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Tests ausführen** (Prüfung)
+5. **Tests ausführen** (Prüfung)
 
    ```bash
    pytest -q
    ```
 
-5. **Programm starten** (falls vorhanden)
+6. **Programm starten** (falls vorhanden)
 
    ```bash
    python app.py
