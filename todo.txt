@@ -5,7 +5,7 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 - [x] Grund-Ordnergerüst anlegen
 - [x] Minimalanforderungen in `pyproject.toml` oder `requirements.txt` erledigt
 - [x] Setup-Skript `setup.sh` erstellen
-- [ ] Erste GUI mit leerem Fenster starten
+- [x] Erste GUI mit leerem Fenster starten
 - [ ] Logging und Konfiguration vorbereiten
 - [ ] Dummy-Daten erzeugen
 

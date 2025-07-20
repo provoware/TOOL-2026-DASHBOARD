@@ -8,6 +8,7 @@ Diese Datei sammelt in einfacher Sprache alle wichtigen Infos zum **ModulTool**.
 - Grund-Ordnergerüst (`modultool`, `data`, `modules`, `tests`, `docs`, `scripts`).
 - Detaillierte Zielbeschreibung in `ZIEL-AGENTS.md`.
 - Erweiterte Planung in `ZIEL_UND_ERWEITERUNGS_AGENTS.md`.
+- Leere GUI in `app.py` startet ein Fenster mit dem Titel "ModulTool".
 - Minimales `requirements.txt` mit `pyside6` und `pytest` angelegt.
 - Setup-Skript `setup.sh` erstellt (legt virtuelle Umgebung an und installiert Pakete).
 
@@ -66,6 +67,7 @@ Die folgenden Schritte zeigen, wie man das Projekt lokal ausprobiert. Alle Befeh
    python app.py
    ```
 
+- Wenn du das Fenster schließen möchtest, klicke auf das "X" oben rechts oder drücke **Strg+C** (Abbrechen) im Terminal.
 Damit sollte ein leeres Fenster erscheinen. Weitere Module folgen Schritt für Schritt.
 
 ## Weiterführende Tipps
