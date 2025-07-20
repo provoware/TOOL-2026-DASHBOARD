@@ -7,7 +7,6 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T02 (P0) pyproject/requirements minimal :: Basisabhängigkeiten festgelegt :: Datei vorhanden, enthält pyside6 + pytest
 - [x] T03 (P0) setup.sh minimal :: Ein-Klick-Setup venv + install :: Ausführbar, erzeugt .venv, startet ohne Crash
 - [x] T04 (P0) app.py Einstieg + leeres Fenster :: GUI startet :: Fenster-Titel 'ModulTool' erscheint
-- [ ] T03 (P0) setup.sh minimal :: Ein-Klick-Setup venv + install :: Ausführbar, erzeugt .venv, startet ohne Crash
 - [ ] T04 (P0) app.py Einstieg + leeres Fenster :: GUI startet :: Fenster-Titel 'ModulTool' erscheint
 - [ ] T05 (P0) logger.py Basis :: Einheitlicher Logger :: Logdatei erstellt + erste Zeile geschrieben
 - [ ] T06 (P0) config.py Konstanten :: Zentrale Pfade/Version :: Versionkonstante + Pfadfunktionen nutzbar
