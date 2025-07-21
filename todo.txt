@@ -43,3 +43,8 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T28 Stats sammeln (module.open)
 - [x] T29 Reset auf Werkzustand
 - [x] T30 Selfcheck periodisch
+- [x] T31 Import/Export ZIP
+- [ ] T32 Undo/Redo Basis (Genres)
+- [ ] T33 Kontext-Hilfe Panel (F1)
+- [ ] T34 Platzhalterkarte bei Modulfehler
+- [ ] T35 Onboarding Overlays

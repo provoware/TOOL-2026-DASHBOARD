@@ -37,7 +37,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T30 (P1) Selfcheck periodisch
 
 ## P2 Komfort
-- [ ] T31 (P2) Import/Export ZIP
+- [x] T31 (P2) Import/Export ZIP
 - [ ] T32 (P2) Undo/Redo Basis (Genres)
 - [ ] T33 (P2) Kontext-Hilfe Panel (F1)
 - [ ] T34 (P2) Platzhalterkarte bei Modulfehler

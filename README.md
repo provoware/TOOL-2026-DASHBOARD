@@ -66,3 +66,13 @@ echo '  "Metal"' >> data/defaults/genres.json
   python -m modultool.reset_manager
   ```
   Dadurch werden eigene Daten gelöscht und die Standardwerte über `selfcheck` neu angelegt.
+* **Daten exportieren** (komplette Sicherung als ZIP):
+  ```bash
+  python -m modultool.zip_manager export
+  ```
+  Die ZIP-Datei erscheint im Ordner `exports/`. Ein eigener Dateiname ist optional möglich.
+* **Daten importieren** (gesicherte ZIP wiederherstellen):
+  ```bash
+  python -m modultool.zip_manager import exports/data_YYYYMMDD_HHMMSS.zip
+  ```
+  Dabei werden bestehende Daten ersetzt.
