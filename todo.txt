@@ -31,5 +31,5 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T16 backup manager basic
 - [x] T17 error handler stub
 - [x] T18 theme loader dark
-- [ ] T19 help_engine stub
+- [x] T19 help_engine stub
 - [ ] T20 tests basis

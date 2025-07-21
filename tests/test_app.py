@@ -67,3 +67,15 @@ def test_statusbar_updates_on_click():
     assert statusbar.currentMessage() == "Card 1 clicked"
     window.close()
     app.quit()
+
+
+def test_help_tooltip_on_first_nav():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    sidebar = window.findChild(QWidget, "sidebar")
+    button = sidebar.findChildren(QPushButton)[0]
+    assert button.toolTip() == "\u00d6ffnet die Hauptansicht"
+    window.close()
+    app.quit()

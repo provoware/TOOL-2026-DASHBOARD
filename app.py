@@ -12,6 +12,7 @@ from PySide6.QtWidgets import (
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
+from modultool.help_engine import register_help
 import sys
 
 
@@ -28,8 +29,10 @@ class MainWindow(QMainWindow):
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
         for i in range(3):
-            nav_button = QPushButton(f"Nav {i + 1}")
+            nav_button = QPushButton(f"Nav {i + 1}", objectName=f"nav{i + 1}")
             nav_button.clicked.connect(partial(self.handle_nav_clicked, i))
+            if i == 0:
+                register_help(nav_button, "\u00d6ffnet die Hauptansicht")
             side_layout.addWidget(nav_button)
         layout.addWidget(sidebar)
 

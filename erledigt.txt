@@ -16,3 +16,4 @@ T15 Autosave Manager minimal :: 2025-07-21
 T16 Backup Manager basic :: 2025-07-21
 T17 Error Handler stub :: 2025-07-21
 T18 Theme Loader dark :: 2025-07-21
+T19 Help Engine stub :: 2025-07-21
