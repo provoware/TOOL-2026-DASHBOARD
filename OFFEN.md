@@ -18,7 +18,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T13 (P0) sidebar Navigation :: Linke Leiste aktiv :: Buttons reagieren (Log)
 - [x] T14 (P0) statusbar Basis :: Statuszeile zeigt Meldungen :: Nach Aktion Text aktualisiert
 - [x] T15 (P0) autosave manager minimal :: Änderungen persistieren :: genres.json aktualisiert nach Add
-- [ ] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
+- [x] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
 - [ ] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
 - [ ] T18 (P0) theme loader dark :: Stylesheet angewendet :: Hintergrundfarbe wechselt erkennb.
 - [ ] T19 (P0) help_engine stub :: Tooltip für 1 Button :: Hover zeigt Hilfetext
