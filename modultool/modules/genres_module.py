@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from .base_module import BaseModule
+from ..autosave import autosave
 from ..config import get_defaults_dir
 
 
@@ -21,6 +22,12 @@ class GenresModule(BaseModule):
     def add_genre(self, genre: str) -> None:
         """Add a genre to the internal list."""
         self.genres.append(genre)
+        autosave.autosave(self)
+
+    def save(self) -> None:
+        """Write genres to disk."""
+        with self.file.open("w", encoding="utf-8") as f:
+            json.dump(self.genres, f, indent=2, ensure_ascii=False)
 
     def get_genres(self) -> list[str]:
         """Return the list of genres."""
