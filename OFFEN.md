@@ -26,7 +26,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 
 ## P1 Robustheit & UX
 - [x] T21 (P1) HighContrast Theme
-- [ ] T22 (P1) Maximieren/Restore Modul
+- [x] T22 (P1) Maximieren/Restore Modul
 - [ ] T23 (P1) Drag&Drop Modulreihenfolge speichern
 - [ ] T24 (P1) Backup Auto-Rotation
 - [ ] T25 (P1) Fehlerdialog UI (Benutzertext + Details)

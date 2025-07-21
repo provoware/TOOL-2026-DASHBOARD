@@ -102,3 +102,17 @@ def test_toggle_theme_switches_stylesheet(tmp_path, monkeypatch):
     assert hc_qss in app.styleSheet()
     window.close()
     app.quit()
+
+
+def test_toggle_maximize_restores_state(monkeypatch):
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    window.toggle_maximize()
+    assert window.isMaximized()
+
+    window.toggle_maximize()
+    assert not window.isMaximized()
+    window.close()
+    app.quit()

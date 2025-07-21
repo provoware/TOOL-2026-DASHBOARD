@@ -25,7 +25,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("ModulTool")
 
         self.current_theme = "dark"
+        self._module_maximized = False
         QShortcut(QKeySequence("F6"), self, activated=self.toggle_theme)
+        QShortcut(QKeySequence("F7"), self, activated=self.toggle_maximize)
 
         central = QWidget()
         layout = QHBoxLayout(central)
@@ -69,6 +71,14 @@ class MainWindow(QMainWindow):
         app = QApplication.instance()
         if app:
             apply_theme(app, self.current_theme)
+
+    def toggle_maximize(self) -> None:
+        """Maximize or restore the main window."""
+        if self._module_maximized:
+            self.showNormal()
+        else:
+            self.showMaximized()
+        self._module_maximized = not self._module_maximized
 
 
 def main() -> int:
