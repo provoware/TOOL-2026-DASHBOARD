@@ -79,3 +79,26 @@ def test_help_tooltip_on_first_nav():
     assert button.toolTip() == "\u00d6ffnet die Hauptansicht"
     window.close()
     app.quit()
+
+
+def test_toggle_theme_switches_stylesheet(tmp_path, monkeypatch):
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    theme_dir = tmp_path / "themes"
+    theme_dir.mkdir()
+    dark_qss = "QWidget { background-color: #111; }"
+    hc_qss = "QWidget { background-color: #000; color: #ff0; }"
+    (theme_dir / "dark.qss").write_text(dark_qss, encoding="utf-8")
+    (theme_dir / "highcontrast.qss").write_text(hc_qss, encoding="utf-8")
+
+    from modultool import config, theme_loader
+
+    monkeypatch.setattr(config, "get_theme_dir", lambda: theme_dir)
+    app = QApplication.instance() or QApplication([])
+    theme_loader.apply_theme(app, "dark")
+
+    window = MainWindow()
+    assert dark_qss in app.styleSheet()
+    window.toggle_theme()
+    assert hc_qss in app.styleSheet()
+    window.close()
+    app.quit()

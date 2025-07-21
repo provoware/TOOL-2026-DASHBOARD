@@ -25,7 +25,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
 
 ## P1 Robustheit & UX
-- [ ] T21 (P1) HighContrast Theme
+- [x] T21 (P1) HighContrast Theme
 - [ ] T22 (P1) Maximieren/Restore Modul
 - [ ] T23 (P1) Drag&Drop Modulreihenfolge speichern
 - [ ] T24 (P1) Backup Auto-Rotation

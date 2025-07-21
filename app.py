@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+from PySide6.QtGui import QKeySequence, QShortcut
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
@@ -22,6 +23,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("ModulTool")
+
+        self.current_theme = "dark"
+        QShortcut(QKeySequence("F6"), self, activated=self.toggle_theme)
 
         central = QWidget()
         layout = QHBoxLayout(central)
@@ -58,6 +62,13 @@ class MainWindow(QMainWindow):
         """Log which navigation button was clicked."""
         logger.info("Nav %s clicked", index + 1)
         self.statusBar().showMessage(f"Nav {index + 1} clicked")
+
+    def toggle_theme(self) -> None:
+        """Switch between dark and high contrast themes."""
+        self.current_theme = "highcontrast" if self.current_theme == "dark" else "dark"
+        app = QApplication.instance()
+        if app:
+            apply_theme(app, self.current_theme)
 
 
 def main() -> int:

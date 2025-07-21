@@ -18,3 +18,4 @@ T17 Error Handler stub :: 2025-07-21
 T18 Theme Loader dark :: 2025-07-21
 T19 Help Engine stub :: 2025-07-21
 T20 Tests basis :: 2025-07-21
+T21 HighContrast Theme :: 2025-07-21
