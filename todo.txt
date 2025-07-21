@@ -11,7 +11,7 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 
 Weitere Punkte stehen in der Datei OFFEN.md.
 
- (Stand: 2025-07-20)
+ (Stand: 2025-07-21)
 # TODO-Liste
 - [x] T01 Grund-Ordnergerüst anlegen
 - [x] T02 pyproject/requirements minimal
@@ -26,10 +26,19 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T11 module_loader Discovery
 - [x] T12 dashboard Grid Cards
 - [x] T13 sidebar Navigation
-- [ ] T14 statusbar Basis
-- [ ] T15 autosave manager minimal
-- [ ] T16 backup manager basic
-- [ ] T17 error handler stub
-- [ ] T18 theme loader dark
-- [ ] T19 help_engine stub
-- [ ] T20 tests basis
+- [x] T14 statusbar Basis
+- [x] T15 autosave manager minimal
+- [x] T16 backup manager basic
+- [x] T17 error handler stub
+- [x] T18 theme loader dark
+- [x] T19 help_engine stub
+- [x] T20 tests basis
+- [x] T21 HighContrast Theme
+- [x] T22 Maximieren/Restore Modul
+- [x] T23 Drag&Drop Modulreihenfolge speichern
+- [x] T24 Backup Auto-Rotation
+- [x] T25 Fehlerdialog UI (Benutzertext + Details)
+- [ ] T26 Settings Panel (Theme, FontScale)
+- [ ] T27 EventBus implementieren
+- [ ] T28 Stats sammeln (module.open)
+- [ ] T29 Reset auf Werkzustand

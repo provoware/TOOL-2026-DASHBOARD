@@ -16,20 +16,20 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T11 (P0) module_loader Discovery :: Automatische Modul-Erkennung :: genres_module wird geladen ohne ImportError
 - [x] T12 (P0) dashboard Grid Cards :: 3x3 Platzhalter sichtbar :: 9 Cards, Titel, Klick loggt Info
 - [x] T13 (P0) sidebar Navigation :: Linke Leiste aktiv :: Buttons reagieren (Log)
-- [ ] T14 (P0) statusbar Basis :: Statuszeile zeigt Meldungen :: Nach Aktion Text aktualisiert
-- [ ] T15 (P0) autosave manager minimal :: Änderungen persistieren :: genres.json aktualisiert nach Add
-- [ ] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
-- [ ] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
-- [ ] T18 (P0) theme loader dark :: Stylesheet angewendet :: Hintergrundfarbe wechselt erkennb.
-- [ ] T19 (P0) help_engine stub :: Tooltip für 1 Button :: Hover zeigt Hilfetext
-- [ ] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
+- [x] T14 (P0) statusbar Basis :: Statuszeile zeigt Meldungen :: Nach Aktion Text aktualisiert
+- [x] T15 (P0) autosave manager minimal :: Änderungen persistieren :: genres.json aktualisiert nach Add
+- [x] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
+- [x] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
+- [x] T18 (P0) theme loader dark :: Stylesheet angewendet :: Hintergrundfarbe wechselt erkennb.
+- [x] T19 (P0) help_engine stub :: Tooltip für 1 Button :: Hover zeigt Hilfetext
+- [x] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
 
 ## P1 Robustheit & UX
-- [ ] T21 (P1) HighContrast Theme
-- [ ] T22 (P1) Maximieren/Restore Modul
-- [ ] T23 (P1) Drag&Drop Modulreihenfolge speichern
-- [ ] T24 (P1) Backup Auto-Rotation
-- [ ] T25 (P1) Fehlerdialog UI (Benutzertext + Details)
+- [x] T21 (P1) HighContrast Theme
+- [x] T22 (P1) Maximieren/Restore Modul
+- [x] T23 (P1) Drag&Drop Modulreihenfolge speichern
+- [x] T24 (P1) Backup Auto-Rotation
+- [x] T25 (P1) Fehlerdialog UI (Benutzertext + Details)
 - [ ] T26 (P1) Settings Panel (Theme, FontScale)
 - [ ] T27 (P1) EventBus implementieren
 - [ ] T28 (P1) Stats sammeln (module.open)
