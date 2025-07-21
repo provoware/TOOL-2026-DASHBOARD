@@ -25,3 +25,4 @@ T24 Backup Auto-Rotation :: 2025-07-21
 T25 Fehlerdialog UI :: 2025-07-21
 T26 Settings Panel :: 2025-07-21
 T27 EventBus implementiert :: 2025-07-21
+T28 Stats sammeln :: 2025-07-21

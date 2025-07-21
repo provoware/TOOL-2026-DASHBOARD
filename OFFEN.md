@@ -32,7 +32,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T25 (P1) Fehlerdialog UI (Benutzertext + Details)
 - [x] T26 (P1) Settings Panel (Theme, FontScale)
 - [x] T27 (P1) EventBus implementieren
-- [ ] T28 (P1) Stats sammeln (module.open)
+- [x] T28 (P1) Stats sammeln (module.open)
 - [ ] T29 (P1) Reset auf Werkzustand
 - [ ] T30 (P1) Selfcheck periodisch
 
