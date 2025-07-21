@@ -38,7 +38,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 
 ## P2 Komfort
 - [x] T31 (P2) Import/Export ZIP
-- [ ] T32 (P2) Undo/Redo Basis (Genres)
+- [x] T32 (P2) Undo/Redo Basis (Genres)
 - [ ] T33 (P2) Kontext-Hilfe Panel (F1)
 - [ ] T34 (P2) Platzhalterkarte bei Modulfehler
 - [ ] T35 (P2) Onboarding Overlays

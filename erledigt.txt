@@ -29,3 +29,4 @@ T28 Stats sammeln :: 2025-07-21
 T29 Reset auf Werkzustand :: 2025-07-21
 T30 Selfcheck periodisch :: 2025-07-21
 T31 Import/Export ZIP :: 2025-07-21
+T32 Undo/Redo Genres :: 2025-07-21

@@ -76,3 +76,13 @@ echo '  "Metal"' >> data/defaults/genres.json
   python -m modultool.zip_manager import exports/data_YYYYMMDD_HHMMSS.zip
   ```
   Dabei werden bestehende Daten ersetzt.
+* **Letzte Änderungen rückgängig machen** ("Undo" – vorherigen Zustand wiederherstellen):
+  ```bash
+  python - <<'PY'
+  from modultool.modules import GenresModule
+  module = GenresModule()
+  module.add_genre("Rock")
+  module.undo()
+  PY
+  ```
+  Mit `module.redo()` kannst du den Schritt erneut anwenden.
