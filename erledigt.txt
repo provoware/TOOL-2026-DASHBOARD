@@ -22,3 +22,4 @@ T21 HighContrast Theme :: 2025-07-21
 T22 Maximieren/Restore Modul :: 2025-07-21
 T23 Drag&Drop Modulreihenfolge speichern :: 2025-07-21
 T24 Backup Auto-Rotation :: 2025-07-21
+T25 Fehlerdialog UI :: 2025-07-21

@@ -29,6 +29,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T22 (P1) Maximieren/Restore Modul
 - [x] T23 (P1) Drag&Drop Modulreihenfolge speichern
 - [x] T24 (P1) Backup Auto-Rotation
+- [x] T25 (P1) Fehlerdialog UI (Benutzertext + Details)
  - [ ] T25 (P1) Fehlerdialog UI (Benutzertext + Details)
 - [ ] T23 (P1) Drag&Drop Modulreihenfolge speichern
 - [ ] T24 (P1) Backup Auto-Rotation
