@@ -40,5 +40,5 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T25 Fehlerdialog UI (Benutzertext + Details)
 - [x] T26 Settings Panel (Theme, FontScale)
 - [x] T27 EventBus implementieren
-- [ ] T28 Stats sammeln (module.open)
+- [x] T28 Stats sammeln (module.open)
 - [ ] T29 Reset auf Werkzustand

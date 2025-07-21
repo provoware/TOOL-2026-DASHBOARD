@@ -13,6 +13,7 @@ class GenresModule(BaseModule):
     name = "genres"
 
     def __init__(self, path: Path | None = None):
+        super().__init__()
         self.file = path or get_defaults_dir() / "genres.json"
         self.genres = load_json(self.file, [])
 
