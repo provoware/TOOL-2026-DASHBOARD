@@ -11,6 +11,7 @@ from PySide6.QtWidgets import (
 )
 
 from modultool.logger import logger
+from modultool.theme_loader import apply_theme
 import sys
 
 
@@ -59,6 +60,7 @@ class MainWindow(QMainWindow):
 def main() -> int:
     """Start the GUI application."""
     app = QApplication(sys.argv)
+    apply_theme(app, "dark")
     window = MainWindow()
     window.show()
     return app.exec()

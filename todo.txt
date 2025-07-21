@@ -30,6 +30,6 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T15 autosave manager minimal
 - [x] T16 backup manager basic
 - [x] T17 error handler stub
-- [ ] T18 theme loader dark
+- [x] T18 theme loader dark
 - [ ] T19 help_engine stub
 - [ ] T20 tests basis
