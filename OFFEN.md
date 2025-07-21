@@ -19,7 +19,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T14 (P0) statusbar Basis :: Statuszeile zeigt Meldungen :: Nach Aktion Text aktualisiert
 - [x] T15 (P0) autosave manager minimal :: Änderungen persistieren :: genres.json aktualisiert nach Add
 - [x] T16 (P0) backup manager basic :: Manuelles Backup erstellt :: Backup-Verzeichnis mit Kopie
-- [ ] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
+- [x] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
 - [ ] T18 (P0) theme loader dark :: Stylesheet angewendet :: Hintergrundfarbe wechselt erkennb.
 - [ ] T19 (P0) help_engine stub :: Tooltip für 1 Button :: Hover zeigt Hilfetext
 - [ ] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
