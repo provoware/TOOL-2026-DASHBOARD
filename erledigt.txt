@@ -20,3 +20,5 @@ T19 Help Engine stub :: 2025-07-21
 T20 Tests basis :: 2025-07-21
 T21 HighContrast Theme :: 2025-07-21
 T22 Maximieren/Restore Modul :: 2025-07-21
+T23 Drag&Drop Modulreihenfolge speichern :: 2025-07-21
+T24 Backup Auto-Rotation :: 2025-07-21
