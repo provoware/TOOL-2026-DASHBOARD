@@ -10,6 +10,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 from PySide6.QtGui import QKeySequence, QShortcut
+from modultool.settings_panel import SettingsDialog
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow):
         self._module_maximized = False
         QShortcut(QKeySequence("F6"), self, activated=self.toggle_theme)
         QShortcut(QKeySequence("F7"), self, activated=self.toggle_maximize)
+        QShortcut(QKeySequence("F8"), self, activated=self.open_settings)
 
         central = QWidget()
         layout = QHBoxLayout(central)
@@ -79,6 +81,15 @@ class MainWindow(QMainWindow):
         else:
             self.showMaximized()
         self._module_maximized = not self._module_maximized
+
+    def open_settings(self) -> None:
+        """Open settings dialog to change theme and font size."""
+        app = QApplication.instance()
+        if not app:
+            return
+        dialog = SettingsDialog(app, self.current_theme, self)
+        if dialog.exec() == dialog.Accepted:
+            self.current_theme = dialog.theme_combo.currentText()
 
 
 def main() -> int:
