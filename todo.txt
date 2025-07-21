@@ -32,4 +32,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T17 error handler stub
 - [x] T18 theme loader dark
 - [x] T19 help_engine stub
-- [ ] T20 tests basis
+- [x] T20 tests basis

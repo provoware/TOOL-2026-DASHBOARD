@@ -22,7 +22,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T17 (P0) error handler stub :: Abfangen FileNotFound :: Fehlende Datei => Dummy + Log INFO
 - [x] T18 (P0) theme loader dark :: Stylesheet angewendet :: Hintergrundfarbe wechselt erkennb.
 - [x] T19 (P0) help_engine stub :: Tooltip für 1 Button :: Hover zeigt Hilfetext
-- [ ] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
+- [x] T20 (P0) tests basis :: pytest läuft grün :: test_loader + test_autosave bestehen
 
 ## P1 Robustheit & UX
 - [ ] T21 (P1) HighContrast Theme
