@@ -50,3 +50,20 @@ def test_sidebar_navigation_logs(monkeypatch):
     assert any("Nav 1 clicked" in m for m in logs)
     window.close()
     app.quit()
+
+
+def test_statusbar_updates_on_click():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    statusbar = window.findChild(QWidget, "statusbar")
+    assert statusbar.currentMessage() == "Bereit"
+
+    dashboard = window.findChild(QWidget, "dashboard")
+    button = dashboard.findChildren(QPushButton)[0]
+    button.click()
+
+    assert statusbar.currentMessage() == "Card 1 clicked"
+    window.close()
+    app.quit()

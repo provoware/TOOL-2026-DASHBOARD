@@ -26,7 +26,7 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T11 module_loader Discovery
 - [x] T12 dashboard Grid Cards
 - [x] T13 sidebar Navigation
-- [ ] T14 statusbar Basis
+- [x] T14 statusbar Basis
 - [ ] T15 autosave manager minimal
 - [ ] T16 backup manager basic
 - [ ] T17 error handler stub

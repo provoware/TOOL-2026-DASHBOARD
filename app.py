@@ -4,6 +4,7 @@ from PySide6.QtWidgets import (
     QGridLayout,
     QHBoxLayout,
     QMainWindow,
+    QStatusBar,
     QPushButton,
     QVBoxLayout,
     QWidget,
@@ -40,14 +41,19 @@ class MainWindow(QMainWindow):
         layout.addWidget(dashboard)
 
         self.setCentralWidget(central)
+        status = QStatusBar(objectName="statusbar")
+        status.showMessage("Bereit")
+        self.setStatusBar(status)
 
     def handle_card_clicked(self, index: int) -> None:
         """Log which card was clicked."""
         logger.info("Card %s clicked", index + 1)
+        self.statusBar().showMessage(f"Card {index + 1} clicked")
 
     def handle_nav_clicked(self, index: int) -> None:
         """Log which navigation button was clicked."""
         logger.info("Nav %s clicked", index + 1)
+        self.statusBar().showMessage(f"Nav {index + 1} clicked")
 
 
 def main() -> int:
