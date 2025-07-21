@@ -38,7 +38,6 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T23 Drag&Drop Modulreihenfolge speichern
 - [x] T24 Backup Auto-Rotation
 - [x] T25 Fehlerdialog UI (Benutzertext + Details)
-- [ ] T25 Fehlerdialog UI (Benutzertext + Details)
 - [ ] T26 Settings Panel (Theme, FontScale)
 - [ ] T27 EventBus implementieren
 - [ ] T28 Stats sammeln (module.open)
