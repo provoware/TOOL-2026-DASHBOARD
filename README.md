@@ -60,3 +60,8 @@ echo '  "Metal"' >> data/defaults/genres.json
   ```
   Klicke auf die Knöpfe "Nav 1" bis "Nav 3". In der Logdatei siehst du dann den Eintrag "Nav 1 clicked" usw.
 
+* **Reset auf Werkzustand** ("factory reset" – stellt Standarddateien wieder her):
+  ```bash
+  python -m modultool.reset_manager
+  ```
+  Dadurch werden eigene Daten gelöscht und die Standardwerte über `selfcheck` neu angelegt.
