@@ -35,3 +35,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T20 tests basis
 - [x] T21 HighContrast Theme
 - [x] T22 Maximieren/Restore Modul
+- [x] T23 Drag&Drop Modulreihenfolge speichern
