@@ -9,3 +9,5 @@ def test_add_genre(tmp_path):
     module = GenresModule(path=genres_file)
     module.add_genre("Electro")
     assert "Electro" in module.get_genres()
+    data = json.loads(genres_file.read_text(encoding="utf-8"))
+    assert "Electro" in data

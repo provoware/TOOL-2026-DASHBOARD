@@ -18,6 +18,11 @@ def get_defaults_dir() -> Path:
     return get_data_dir() / "defaults"
 
 
+def get_theme_dir() -> Path:
+    """Return directory containing theme stylesheets."""
+    return get_data_dir() / "themes"
+
+
 def get_log_dir() -> Path:
     """Return directory for log files."""
     return get_root_dir() / "logs"
