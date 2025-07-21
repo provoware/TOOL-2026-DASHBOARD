@@ -32,5 +32,8 @@ class BackupManager:
             shutil.rmtree(old, ignore_errors=True)
             logger.info("backup removed: %s", old.name)
 
+        logger.info("backup: %s created", dest.name)
+        return dest
+
 
 backup = BackupManager()
