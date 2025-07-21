@@ -42,3 +42,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T27 EventBus implementieren
 - [x] T28 Stats sammeln (module.open)
 - [x] T29 Reset auf Werkzustand
+- [x] T30 Selfcheck periodisch

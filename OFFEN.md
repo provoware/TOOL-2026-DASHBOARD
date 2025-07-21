@@ -34,7 +34,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T27 (P1) EventBus implementieren
 - [x] T28 (P1) Stats sammeln (module.open)
 - [x] T29 (P1) Reset auf Werkzustand
-- [ ] T30 (P1) Selfcheck periodisch
+- [x] T30 (P1) Selfcheck periodisch
 
 ## P2 Komfort
 - [ ] T31 (P2) Import/Export ZIP

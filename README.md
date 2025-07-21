@@ -54,6 +54,7 @@ echo '  "Metal"' >> data/defaults/genres.json
   python -m modultool.selfcheck
   ```
   Das Skript erstellt fehlende Dummy-Daten und schreibt eine Meldung ins Log.
+  Im Programm selbst wird alle 60 Minuten automatisch ein Selfcheck ausgeführt.
 * **Sidebar testen** (linke Navigationsleiste):
   ```bash
   python app.py

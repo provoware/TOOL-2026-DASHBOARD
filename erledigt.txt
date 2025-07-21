@@ -27,3 +27,4 @@ T26 Settings Panel :: 2025-07-21
 T27 EventBus implementiert :: 2025-07-21
 T28 Stats sammeln :: 2025-07-21
 T29 Reset auf Werkzustand :: 2025-07-21
+T30 Selfcheck periodisch :: 2025-07-21
