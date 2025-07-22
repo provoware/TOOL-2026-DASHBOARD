@@ -54,9 +54,39 @@ echo '  "Metal"' >> data/defaults/genres.json
   python -m modultool.selfcheck
   ```
   Das Skript erstellt fehlende Dummy-Daten und schreibt eine Meldung ins Log.
+  Im Programm selbst wird alle 60 Minuten automatisch ein Selfcheck ausgeführt.
 * **Sidebar testen** (linke Navigationsleiste):
   ```bash
   python app.py
   ```
   Klicke auf die Knöpfe "Nav 1" bis "Nav 3". In der Logdatei siehst du dann den Eintrag "Nav 1 clicked" usw.
 
+* **Reset auf Werkzustand** ("factory reset" – stellt Standarddateien wieder her):
+  ```bash
+  python -m modultool.reset_manager
+  ```
+  Dadurch werden eigene Daten gelöscht und die Standardwerte über `selfcheck` neu angelegt.
+* **Daten exportieren** (komplette Sicherung als ZIP):
+  ```bash
+  python -m modultool.zip_manager export
+  ```
+  Die ZIP-Datei erscheint im Ordner `exports/`. Ein eigener Dateiname ist optional möglich.
+* **Daten importieren** (gesicherte ZIP wiederherstellen):
+  ```bash
+  python -m modultool.zip_manager import exports/data_YYYYMMDD_HHMMSS.zip
+  ```
+  Dabei werden bestehende Daten ersetzt.
+* **Letzte Änderungen rückgängig machen** ("Undo" – vorherigen Zustand wiederherstellen):
+  ```bash
+  python - <<'PY'
+  from modultool.modules import GenresModule
+  module = GenresModule()
+  module.add_genre("Rock")
+  module.undo()
+  PY
+  ```
+  Mit `module.redo()` kannst du den Schritt erneut anwenden.
+* **Kontext-Hilfe anzeigen** ("Help"-Fenster mit F1 öffnen):
+  Drücke im Programm einfach die Taste `F1`. Ein kleines Fenster listet alle
+  verfügbaren Hilfetexte auf, die vorher per `register_help()` zugewiesen
+  wurden.
