@@ -44,7 +44,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T35 (P2) Onboarding Overlays
 
 ## S (Stretch)
-- [ ] TS1 (S) Sandbox Mode
+- [x] TS1 (S) Sandbox Mode
 - [ ] TS2 (S) Manifest Permissions Prüfer
 - [ ] TS3 (S) AppImage Build Script
 

@@ -101,3 +101,10 @@ echo '  "Metal"' >> data/defaults/genres.json
   show_onboarding(QWidget())
   PY
   ```
+* **Sandbox-Modus** (Testumgebung):
+  Setze die Umgebungsvariable `MODULTOOL_SANDBOX=1`, um Dateien in einem
+  temporären Ordner zu speichern. Alternativ kannst du im Code starten:
+  ```python
+  from modultool import enable_sandbox
+  enable_sandbox()
+  ```

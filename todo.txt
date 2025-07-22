@@ -48,3 +48,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T33 Kontext-Hilfe Panel (F1)
 - [x] T34 Platzhalterkarte bei Modulfehler
 - [x] T35 Onboarding Overlays
+- [x] TS1 Sandbox Mode
