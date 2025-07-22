@@ -117,3 +117,10 @@ echo '  "Metal"' >> data/defaults/genres.json
   Bei Erfolg erscheint `Manifest OK`. Unbekannte Rechte meldet der
   Prüfer im Log (`logs/modultool.log`). Erlaubt sind `read`, `write`
   und `network`.
+* **AppImage erzeugen** ("portable Programmpaket" – läuft ohne Installation):
+  ```bash
+  bash scripts/build_appimage.sh
+  ```
+  Das Skript nutzt **PyInstaller** (erstellt ein eigenständiges Programm) und
+  **appimagetool** (wandelt es in eine AppImage-Datei um). Danach findest du das
+  Paket im aktuellen Ordner.
