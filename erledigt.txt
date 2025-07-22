@@ -35,3 +35,4 @@ T34 Platzhalterkarte Modulfehler :: 2025-07-22
 T35 Onboarding Overlays :: 2025-07-22
 TS1 Sandbox Mode :: 2025-07-22
 TS2 Manifest Permissions Prüfer :: 2025-07-22
+TS3 AppImage Build Script :: 2025-07-22
