@@ -40,7 +40,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T31 (P2) Import/Export ZIP
 - [x] T32 (P2) Undo/Redo Basis (Genres)
 - [x] T33 (P2) Kontext-Hilfe Panel (F1)
-- [ ] T34 (P2) Platzhalterkarte bei Modulfehler
+- [x] T34 (P2) Platzhalterkarte bei Modulfehler
 - [ ] T35 (P2) Onboarding Overlays
 
 ## S (Stretch)
