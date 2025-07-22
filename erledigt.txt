@@ -34,3 +34,4 @@ T33 Kontext-Hilfe Panel :: 2025-07-21
 T34 Platzhalterkarte Modulfehler :: 2025-07-22
 T35 Onboarding Overlays :: 2025-07-22
 TS1 Sandbox Mode :: 2025-07-22
+TS2 Manifest Permissions Prüfer :: 2025-07-22

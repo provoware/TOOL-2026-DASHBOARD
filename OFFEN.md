@@ -45,7 +45,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
-- [ ] TS2 (S) Manifest Permissions Prüfer
+- [x] TS2 (S) Manifest Permissions Prüfer
 - [ ] TS3 (S) AppImage Build Script
 
 ## BLOCKIERT

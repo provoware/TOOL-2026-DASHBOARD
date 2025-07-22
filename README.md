@@ -108,3 +108,12 @@ echo '  "Metal"' >> data/defaults/genres.json
   from modultool import enable_sandbox
   enable_sandbox()
   ```
+* **Manifest prüfen** ("permissions" = Berechtigungen):
+  Die Datei `manifest.json` beschreibt, was die App darf. Mit dem
+  kleinen Prüfer kontrollierst du diese Rechte:
+  ```bash
+  python -m modultool.permissions_checker
+  ```
+  Bei Erfolg erscheint `Manifest OK`. Unbekannte Rechte meldet der
+  Prüfer im Log (`logs/modultool.log`). Erlaubt sind `read`, `write`
+  und `network`.
