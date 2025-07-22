@@ -1,4 +1,5 @@
 import json
+import threading
 
 from .config import get_defaults_dir
 from .logger import logger
@@ -33,3 +34,34 @@ def run_selfcheck() -> None:
         logger.info("defaults: quotes.json erzeugt")
 
     logger.info("Selfcheck abgeschlossen")
+
+
+class SelfcheckScheduler:
+    """Run selfcheck periodically in a background timer."""
+
+    def __init__(self, interval: int = 3600) -> None:
+        self.interval = interval
+        self._timer: threading.Timer | None = None
+
+    def start(self) -> None:
+        """Begin periodic execution of ``run_selfcheck``."""
+        self.stop()
+        self._schedule()
+
+    def _schedule(self) -> None:
+        self._timer = threading.Timer(self.interval, self._run)
+        self._timer.daemon = True
+        self._timer.start()
+
+    def _run(self) -> None:
+        run_selfcheck()
+        self._schedule()
+
+    def stop(self) -> None:
+        """Cancel the periodic execution."""
+        if self._timer:
+            self._timer.cancel()
+            self._timer = None
+
+
+selfcheck_scheduler = SelfcheckScheduler()

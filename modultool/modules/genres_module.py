@@ -5,6 +5,7 @@ from .base_module import BaseModule
 from ..autosave import autosave
 from ..config import get_defaults_dir
 from ..error_handler import load_json
+from ..undo_manager import UndoRedoManager
 
 
 class GenresModule(BaseModule):
@@ -16,11 +17,34 @@ class GenresModule(BaseModule):
         super().__init__()
         self.file = path or get_defaults_dir() / "genres.json"
         self.genres = load_json(self.file, [])
+        self._history = UndoRedoManager(depth=2)
 
     def add_genre(self, genre: str) -> None:
         """Add a genre to the internal list."""
+        self._history.record(self.genres)
         self.genres.append(genre)
         autosave.autosave(self)
+
+    def remove_genre(self, genre: str) -> None:
+        """Remove genre if present."""
+        if genre in self.genres:
+            self._history.record(self.genres)
+            self.genres.remove(genre)
+            autosave.autosave(self)
+
+    def undo(self) -> None:
+        """Revert the last change if possible."""
+        state = self._history.undo(self.genres)
+        if state != self.genres:
+            self.genres = state
+            autosave.autosave(self)
+
+    def redo(self) -> None:
+        """Reapply the last undone change if possible."""
+        state = self._history.redo(self.genres)
+        if state != self.genres:
+            self.genres = state
+            autosave.autosave(self)
 
     def save(self) -> None:
         """Write genres to disk."""

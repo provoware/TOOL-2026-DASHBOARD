@@ -33,12 +33,12 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T26 (P1) Settings Panel (Theme, FontScale)
 - [x] T27 (P1) EventBus implementieren
 - [x] T28 (P1) Stats sammeln (module.open)
-- [ ] T29 (P1) Reset auf Werkzustand
-- [ ] T30 (P1) Selfcheck periodisch
+- [x] T29 (P1) Reset auf Werkzustand
+- [x] T30 (P1) Selfcheck periodisch
 
 ## P2 Komfort
-- [ ] T31 (P2) Import/Export ZIP
-- [ ] T32 (P2) Undo/Redo Basis (Genres)
+- [x] T31 (P2) Import/Export ZIP
+- [x] T32 (P2) Undo/Redo Basis (Genres)
 - [ ] T33 (P2) Kontext-Hilfe Panel (F1)
 - [ ] T34 (P2) Platzhalterkarte bei Modulfehler
 - [ ] T35 (P2) Onboarding Overlays

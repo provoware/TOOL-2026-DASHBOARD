@@ -15,6 +15,7 @@ from modultool.settings_panel import SettingsDialog
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
 from modultool.help_engine import register_help
+from modultool.selfcheck import selfcheck_scheduler
 import sys
 
 
@@ -98,6 +99,8 @@ def main() -> int:
     apply_theme(app, "dark")
     window = MainWindow()
     window.show()
+    selfcheck_scheduler.start()
+    app.aboutToQuit.connect(selfcheck_scheduler.stop)
     return app.exec()
 
 
