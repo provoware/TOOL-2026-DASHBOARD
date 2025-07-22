@@ -124,3 +124,9 @@ echo '  "Metal"' >> data/defaults/genres.json
   Das Skript nutzt **PyInstaller** (erstellt ein eigenständiges Programm) und
   **appimagetool** (wandelt es in eine AppImage-Datei um). Danach findest du das
   Paket im aktuellen Ordner.
+* **AppImage erzeugen** (portables Linux-Paket):
+  Voraussetzung sind `pyinstaller` und `appimagetool`.
+  ```bash
+  bash scripts/build_appimage.sh
+  ```
+  Die fertige Datei liegt danach unter `build/appimage/`.
