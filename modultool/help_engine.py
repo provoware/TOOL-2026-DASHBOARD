@@ -2,17 +2,16 @@ from __future__ import annotations
 
 from PySide6.QtWidgets import (
     QDialog,
-    QLabel,
     QPushButton,
     QTextEdit,
     QVBoxLayout,
     QWidget,
 )
 
+from .logger import logger
+
 
 _HELP_REGISTRY: dict[str, str] = {}
-
-from .logger import logger
 
 
 def register_help(widget: QWidget, text: str) -> None:

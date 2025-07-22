@@ -46,5 +46,5 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T31 Import/Export ZIP
 - [x] T32 Undo/Redo Basis (Genres)
 - [x] T33 Kontext-Hilfe Panel (F1)
-- [ ] T34 Platzhalterkarte bei Modulfehler
+- [x] T34 Platzhalterkarte bei Modulfehler
 - [ ] T35 Onboarding Overlays

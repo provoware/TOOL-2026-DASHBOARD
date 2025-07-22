@@ -31,3 +31,4 @@ T30 Selfcheck periodisch :: 2025-07-21
 T31 Import/Export ZIP :: 2025-07-21
 T32 Undo/Redo Genres :: 2025-07-21
 T33 Kontext-Hilfe Panel :: 2025-07-21
+T34 Platzhalterkarte Modulfehler :: 2025-07-22
