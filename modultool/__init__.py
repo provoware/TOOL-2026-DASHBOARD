@@ -15,7 +15,3 @@ __all__ = [
     "event_bus",
     "stats",
 ]
-
-run_selfcheck()
-
-__all__ = ["logger", "run_selfcheck", "register_help", "event_bus", "stats"]
