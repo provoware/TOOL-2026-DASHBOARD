@@ -16,6 +16,7 @@ from modultool.logger import logger
 from modultool.theme_loader import apply_theme
 from modultool.help_engine import register_help, create_help_dialog
 from modultool.selfcheck import selfcheck_scheduler
+from modultool.onboarding import show_onboarding
 import sys
 
 
@@ -104,6 +105,7 @@ def main() -> int:
     apply_theme(app, "dark")
     window = MainWindow()
     window.show()
+    show_onboarding(window)
     selfcheck_scheduler.start()
     app.aboutToQuit.connect(selfcheck_scheduler.stop)
     return app.exec()

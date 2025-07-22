@@ -1,5 +1,4 @@
 import json
-from pathlib import Path
 
 from modultool.error_handler import load_json
 from modultool.logger import logger

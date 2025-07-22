@@ -90,3 +90,21 @@ echo '  "Metal"' >> data/defaults/genres.json
   Drücke im Programm einfach die Taste `F1`. Ein kleines Fenster listet alle
   verfügbaren Hilfetexte auf, die vorher per `register_help()` zugewiesen
   wurden.
+* **Onboarding-Overlay** (erster Start):
+  Beim Start erscheint ein kurzer Hinweis-Dialog. Er lässt sich per Klick auf
+  "Los geht's" schließen. Das Overlay kann auch manuell angezeigt werden:
+  ```bash
+  python - <<'PY'
+  from modultool.onboarding import show_onboarding
+  from PySide6.QtWidgets import QApplication, QWidget
+  app = QApplication([])
+  show_onboarding(QWidget())
+  PY
+  ```
+* **Sandbox-Modus** (Testumgebung):
+  Setze die Umgebungsvariable `MODULTOOL_SANDBOX=1`, um Dateien in einem
+  temporären Ordner zu speichern. Alternativ kannst du im Code starten:
+  ```python
+  from modultool import enable_sandbox
+  enable_sandbox()
+  ```
