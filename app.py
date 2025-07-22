@@ -14,6 +14,7 @@ from modultool.settings_panel import SettingsDialog
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
+from modultool.help_engine import register_help, create_help_dialog
 from modultool.help_engine import register_help
 from modultool.selfcheck import selfcheck_scheduler
 import sys
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow):
 
         self.current_theme = "dark"
         self._module_maximized = False
+        QShortcut(QKeySequence("F1"), self, activated=self.show_help)
         QShortcut(QKeySequence("F6"), self, activated=self.toggle_theme)
         QShortcut(QKeySequence("F7"), self, activated=self.toggle_maximize)
         QShortcut(QKeySequence("F8"), self, activated=self.open_settings)
@@ -91,6 +93,10 @@ class MainWindow(QMainWindow):
         dialog = SettingsDialog(app, self.current_theme, self)
         if dialog.exec() == dialog.Accepted:
             self.current_theme = dialog.theme_combo.currentText()
+
+    def show_help(self) -> None:
+        dialog = create_help_dialog()
+        dialog.exec()
 
 
 def main() -> int:

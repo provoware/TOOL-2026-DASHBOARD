@@ -86,3 +86,7 @@ echo '  "Metal"' >> data/defaults/genres.json
   PY
   ```
   Mit `module.redo()` kannst du den Schritt erneut anwenden.
+* **Kontext-Hilfe anzeigen** ("Help"-Fenster mit F1 öffnen):
+  Drücke im Programm einfach die Taste `F1`. Ein kleines Fenster listet alle
+  verfügbaren Hilfetexte auf, die vorher per `register_help()` zugewiesen
+  wurden.
