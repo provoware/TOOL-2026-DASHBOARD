@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (
     QMainWindow,
     QStatusBar,
     QPushButton,
+    QGroupBox,
     QVBoxLayout,
     QWidget,
     QStyle,
@@ -112,7 +113,6 @@ class MainWindow(QMainWindow):
             card_layout.addLayout(top_row)
 
             button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
-            button = QPushButton(f"Card {i + 1}")
             button.setStyleSheet(
                 f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
             )
@@ -121,6 +121,35 @@ class MainWindow(QMainWindow):
 
             grid.addWidget(card, i // 3, i % 3)
         layout.addWidget(dashboard)
+
+        right_panel = QWidget(objectName="right_panel")
+        right_layout = QVBoxLayout(right_panel)
+
+        settings_box = QGroupBox("Einstellungen", objectName="settings_box")
+        sb_layout = QVBoxLayout(settings_box)
+        settings_btn = QPushButton("\u00d6ffnen", objectName="open_settings")
+        settings_btn.clicked.connect(self.open_settings)
+        sb_layout.addWidget(settings_btn)
+        right_layout.addWidget(settings_box)
+
+        help_box = QGroupBox("Schnellhilfe", objectName="help_box")
+        hb_layout = QVBoxLayout(help_box)
+        help_btn = QPushButton("Hilfe", objectName="open_help")
+        help_btn.clicked.connect(self.show_help)
+        hb_layout.addWidget(help_btn)
+        right_layout.addWidget(help_box)
+
+        stats_box = QGroupBox("Nutzerstatistik", objectName="stats_box")
+        st_layout = QVBoxLayout(stats_box)
+        self.error_label = QLabel("Fehler: 0", objectName="error_label")
+        self.module_label = QLabel(
+            "Beliebtestes Modul: -", objectName="module_label"
+        )
+        st_layout.addWidget(self.error_label)
+        st_layout.addWidget(self.module_label)
+        right_layout.addWidget(stats_box)
+
+        layout.addWidget(right_panel)
 
         self.setCentralWidget(central)
         status = QStatusBar(objectName="statusbar")

@@ -57,5 +57,5 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T39 Sidebar-Icons und Suchfeld
 - [x] T40 Karten farbig rahmen
 - [x] T41 Edit-Icon je Karte
-- [ ] T42 Rechte Spalte als Groupbox
+- [x] T42 Rechte Spalte als Groupbox
 - [ ] T43 Stats live anzeigen
