@@ -42,6 +42,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T33 (P2) Kontext-Hilfe Panel (F1)
 - [x] T34 (P2) Platzhalterkarte bei Modulfehler
 - [x] T35 (P2) Onboarding Overlays
+- [x] T36 (P2) Layout-Mockup Datei :: Textliche Vorlage basierend auf LAYOUT.png :: Datei docs/mockup_layout.txt mit ASCII-Skizze
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
