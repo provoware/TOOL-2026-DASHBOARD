@@ -3,14 +3,19 @@ from PySide6.QtWidgets import (
     QApplication,
     QGridLayout,
     QHBoxLayout,
+    QLabel,
+    QLineEdit,
     QMainWindow,
     QStatusBar,
     QPushButton,
     QVBoxLayout,
     QWidget,
+    QStyle,
 )
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeySequence, QShortcut
 from modultool.settings_panel import SettingsDialog
+from modultool import config
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
@@ -35,12 +40,38 @@ class MainWindow(QMainWindow):
         QShortcut(QKeySequence("F8"), self, activated=self.open_settings)
 
         central = QWidget()
-        layout = QHBoxLayout(central)
+        outer_layout = QVBoxLayout(central)
+        header = QLabel(
+            "Genrenarchiv \u2013 alle \u00c4nderungen gespeichert",
+            objectName="header",
+        )
+        header.setAlignment(Qt.AlignCenter)
+        outer_layout.addWidget(header)
+        layout = QHBoxLayout()
+        outer_layout.addLayout(layout)
 
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
+
+        title = QLabel("ModulTool", objectName="sidebar_title")
+        title_font = title.font()
+        title_font.setBold(True)
+        title.setFont(title_font)
+        side_layout.addWidget(title)
+
+        search = QLineEdit(objectName="search")
+        search.setPlaceholderText("Suchen...")
+        side_layout.addWidget(search)
+
+        icons = [
+            self.style().standardIcon(QStyle.SP_FileIcon),
+            self.style().standardIcon(QStyle.SP_DirIcon),
+            self.style().standardIcon(QStyle.SP_DesktopIcon),
+        ]
         for i in range(3):
-            nav_button = QPushButton(f"Nav {i + 1}", objectName=f"nav{i + 1}")
+            nav_button = QPushButton(
+                f"Nav {i + 1}", icon=icons[i], objectName=f"nav{i + 1}"
+            )
             nav_button.clicked.connect(partial(self.handle_nav_clicked, i))
             if i == 0:
                 register_help(nav_button, "\u00d6ffnet die Hauptansicht")
@@ -49,15 +80,52 @@ class MainWindow(QMainWindow):
 
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
+        colors = [
+            "#f8a",
+            "#8fa",
+            "#acf",
+            "#fc8",
+            "#8cf",
+            "#faf",
+            "#faa",
+            "#afa",
+            "#aaf",
+        ]
         for i in range(9):
-            button = QPushButton(f"Card {i + 1}")
+            card = QWidget(objectName=f"card{i + 1}")
+            card_layout = QVBoxLayout(card)
+            card_layout.setContentsMargins(0, 0, 0, 0)
+
+            top_row = QHBoxLayout()
+            top_row.setContentsMargins(0, 0, 0, 0)
+            top_row.addStretch()
+            edit_btn = QPushButton(
+                "",
+                icon=self.style().standardIcon(QStyle.SP_FileDialogDetailedView),
+                objectName=f"edit{i + 1}",
+            )
+            edit_btn.setFixedSize(16, 16)
+            edit_btn.setStyleSheet("border: none;")
+            edit_btn.clicked.connect(partial(self.handle_edit_clicked, i))
+            top_row.addWidget(edit_btn)
+
+            card_layout.addLayout(top_row)
+
+            button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
+            button.setStyleSheet(
+                f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+            )
             button.clicked.connect(partial(self.handle_card_clicked, i))
-            grid.addWidget(button, i // 3, i % 3)
+            card_layout.addWidget(button)
+
+            grid.addWidget(card, i // 3, i % 3)
         layout.addWidget(dashboard)
 
         self.setCentralWidget(central)
         status = QStatusBar(objectName="statusbar")
-        status.showMessage("Bereit")
+        version = config.APP_VERSION
+        path = str(config.get_root_dir())
+        status.showMessage(f"Version {version} - {path}")
         self.setStatusBar(status)
 
     def handle_card_clicked(self, index: int) -> None:
@@ -69,6 +137,11 @@ class MainWindow(QMainWindow):
         """Log which navigation button was clicked."""
         logger.info("Nav %s clicked", index + 1)
         self.statusBar().showMessage(f"Nav {index + 1} clicked")
+
+    def handle_edit_clicked(self, index: int) -> None:
+        """Log edit button presses for each card."""
+        logger.info("Card %s edit", index + 1)
+        self.statusBar().showMessage(f"Edit card {index + 1}")
 
     def toggle_theme(self) -> None:
         """Switch between dark and high contrast themes."""

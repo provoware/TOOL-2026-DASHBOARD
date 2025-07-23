@@ -36,3 +36,9 @@ T35 Onboarding Overlays :: 2025-07-22
 TS1 Sandbox Mode :: 2025-07-22
 TS2 Manifest Permissions Prüfer :: 2025-07-22
 TS3 AppImage Build Script :: 2025-07-22
+T36 Layout-Mockup Datei :: 2025-07-23
+T37 Footer Version/Pfad :: 2025-07-23
+T38 Headerleiste zentriert :: 2025-07-23
+T39 Sidebar-Icons und Suchfeld :: 2025-07-23
+T40 Karten farbig rahmen :: 2025-07-23
+T41 Edit-Icon je Karte :: 2025-07-23
