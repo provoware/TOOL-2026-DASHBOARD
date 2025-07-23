@@ -23,6 +23,8 @@ from modultool.theme_loader import apply_theme
 from modultool.help_engine import register_help, create_help_dialog
 from modultool.selfcheck import selfcheck_scheduler
 from modultool.onboarding import show_onboarding
+from modultool.event_bus import event_bus
+from modultool.stats import stats
 import sys
 
 
@@ -151,6 +153,11 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(right_panel)
 
+        event_bus.subscribe("module.open", self.update_stats_labels)
+        event_bus.subscribe("error.occurred", self.update_stats_labels)
+
+        self.update_stats_labels()
+
         self.setCentralWidget(central)
         status = QStatusBar(objectName="statusbar")
         version = config.APP_VERSION
@@ -172,6 +179,12 @@ class MainWindow(QMainWindow):
         """Log edit button presses for each card."""
         logger.info("Card %s edit", index + 1)
         self.statusBar().showMessage(f"Edit card {index + 1}")
+
+    def update_stats_labels(self, *args) -> None:
+        """Refresh statistics labels with current values."""
+        top = stats.get_most_used_module() or "-"
+        self.module_label.setText(f"Beliebtestes Modul: {top}")
+        self.error_label.setText(f"Fehler: {stats.get_error_count()}")
 
     def toggle_theme(self) -> None:
         """Switch between dark and high contrast themes."""

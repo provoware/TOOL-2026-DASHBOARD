@@ -58,4 +58,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T40 Karten farbig rahmen
 - [x] T41 Edit-Icon je Karte
 - [x] T42 Rechte Spalte als Groupbox
-- [ ] T43 Stats live anzeigen
+- [x] T43 Stats live anzeigen
