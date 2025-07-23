@@ -52,3 +52,4 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] TS2 Manifest Permissions Prüfer
 - [x] TS3 AppImage Build Script
 - [x] T36 Layout-Mockup Datei
+- [ ] T37 Footer Version/Pfad

@@ -9,6 +9,7 @@ if ROOT_DIR not in sys.path:
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget  # noqa: E402
 from modultool.logger import logger  # noqa: E402
 from app import MainWindow  # noqa: E402
+from modultool import config  # noqa: E402
 
 
 def test_window_title():
@@ -57,7 +58,8 @@ def test_statusbar_updates_on_click():
     window = MainWindow()
 
     statusbar = window.findChild(QWidget, "statusbar")
-    assert statusbar.currentMessage() == "Bereit"
+    expected = f"Version {config.APP_VERSION} - {config.get_root_dir()}"
+    assert statusbar.currentMessage() == expected
 
     dashboard = window.findChild(QWidget, "dashboard")
     button = dashboard.findChildren(QPushButton)[0]

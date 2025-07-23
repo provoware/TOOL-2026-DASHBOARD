@@ -11,6 +11,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QKeySequence, QShortcut
 from modultool.settings_panel import SettingsDialog
+from modultool import config
 
 from modultool.logger import logger
 from modultool.theme_loader import apply_theme
@@ -57,7 +58,9 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(central)
         status = QStatusBar(objectName="statusbar")
-        status.showMessage("Bereit")
+        version = config.APP_VERSION
+        path = str(config.get_root_dir())
+        status.showMessage(f"Version {version} - {path}")
         self.setStatusBar(status)
 
     def handle_card_clicked(self, index: int) -> None:
