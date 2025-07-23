@@ -130,6 +130,7 @@ def test_cards_have_colored_frames():
 
     dashboard = window.findChild(QWidget, "dashboard")
     buttons = [dashboard.findChild(QPushButton, f"card_button{i+1}") for i in range(9)]
+    buttons = dashboard.findChildren(QPushButton)
     assert all("border" in btn.styleSheet() for btn in buttons)
     window.close()
     app.quit()

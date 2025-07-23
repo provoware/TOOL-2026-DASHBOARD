@@ -112,6 +112,7 @@ class MainWindow(QMainWindow):
             card_layout.addLayout(top_row)
 
             button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
+            button = QPushButton(f"Card {i + 1}")
             button.setStyleSheet(
                 f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
             )
