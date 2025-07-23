@@ -11,7 +11,7 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 
 Weitere Punkte stehen in der Datei OFFEN.md.
 
- (Stand: 2025-07-21)
+ (Stand: 2025-07-23)
 # TODO-Liste
 - [x] T01 Grund-Ordnergerüst anlegen
 - [x] T02 pyproject/requirements minimal
