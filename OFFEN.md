@@ -43,7 +43,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T34 (P2) Platzhalterkarte bei Modulfehler
 - [x] T35 (P2) Onboarding Overlays
 - [x] T36 (P2) Layout-Mockup Datei :: Textliche Vorlage basierend auf LAYOUT.png :: Datei docs/mockup_layout.txt mit ASCII-Skizze
-- [ ] T37 (P2) Footer Version/Pfad :: Statuszeile zeigt Version und Projektpfad :: Text "Version <num> - <Pfad>" sichtbar
+- [x] T37 (P2) Footer Version/Pfad :: Statuszeile zeigt Version und Projektpfad :: Text "Version <num> - <Pfad>" sichtbar
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
