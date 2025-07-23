@@ -42,8 +42,8 @@ def test_dashboard_has_nine_cards():
     app = QApplication.instance() or QApplication([])
     window = MainWindow()
     dashboard = window.findChild(QWidget, "dashboard")
-    buttons = dashboard.findChildren(QPushButton)
-    assert len(buttons) == 9
+    buttons = [dashboard.findChild(QPushButton, f"card_button{i+1}") for i in range(9)]
+    assert all(btn is not None for btn in buttons)
     window.close()
     app.quit()
 
@@ -78,7 +78,7 @@ def test_statusbar_updates_on_click():
     assert statusbar.currentMessage() == expected
 
     dashboard = window.findChild(QWidget, "dashboard")
-    button = dashboard.findChildren(QPushButton)[0]
+    button = dashboard.findChild(QPushButton, "card_button1")
     button.click()
 
     assert statusbar.currentMessage() == "Card 1 clicked"
@@ -129,8 +129,31 @@ def test_cards_have_colored_frames():
     window = MainWindow()
 
     dashboard = window.findChild(QWidget, "dashboard")
+    buttons = [dashboard.findChild(QPushButton, f"card_button{i+1}") for i in range(9)]
     buttons = dashboard.findChildren(QPushButton)
     assert all("border" in btn.styleSheet() for btn in buttons)
+    window.close()
+    app.quit()
+
+
+def test_cards_have_edit_icons_and_log(monkeypatch):
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    logs = []
+
+    def fake_log(msg, *args):
+        logs.append(msg % args)
+
+    monkeypatch.setattr(logger, "info", fake_log)
+
+    dashboard = window.findChild(QWidget, "dashboard")
+    edit_buttons = [dashboard.findChild(QPushButton, f"edit{i+1}") for i in range(9)]
+    assert all(btn is not None for btn in edit_buttons)
+
+    edit_buttons[0].click()
+    assert any("Card 1 edit" in m for m in logs)
     window.close()
     app.quit()
 

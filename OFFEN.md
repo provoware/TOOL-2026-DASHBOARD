@@ -47,6 +47,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T38 (P2) Headerleiste zentriert :: Text "Genrenarchiv – alle \u00c4nderungen gespeichert" sichtbar :: QLabel oben mittig
 - [x] T39 (P2) Sidebar-Icons und Suchfeld :: Links Symbole + Suchbox :: Buttons zeigen Icons
 - [x] T40 (P2) Karten farbig rahmen :: Jede Karte hat bunten Rahmen/Hintergrund :: StyleSheet f\u00fcr QPushButton
+- [x] T41 (P2) Edit-Icon je Karte :: Kleines Symbol oben rechts :: Klick loggt "edit"
 - [ ] T41 (P2) Edit-Icon je Karte :: Kleines Symbol oben rechts :: Klick loggt "edit"
 - [ ] T42 (P2) Rechte Spalte als Groupbox :: Bereiche Einstellungen/Hilfe/Statistik gruppiert :: QGroupBox-Stil
 - [ ] T43 (P2) Stats live anzeigen :: Fehlerz\u00e4hler und meistgenutztes Modul :: Werte aktualisieren sich

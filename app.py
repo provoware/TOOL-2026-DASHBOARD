@@ -92,12 +92,34 @@ class MainWindow(QMainWindow):
             "#aaf",
         ]
         for i in range(9):
+            card = QWidget(objectName=f"card{i + 1}")
+            card_layout = QVBoxLayout(card)
+            card_layout.setContentsMargins(0, 0, 0, 0)
+
+            top_row = QHBoxLayout()
+            top_row.setContentsMargins(0, 0, 0, 0)
+            top_row.addStretch()
+            edit_btn = QPushButton(
+                "",
+                icon=self.style().standardIcon(QStyle.SP_FileDialogDetailedView),
+                objectName=f"edit{i + 1}",
+            )
+            edit_btn.setFixedSize(16, 16)
+            edit_btn.setStyleSheet("border: none;")
+            edit_btn.clicked.connect(partial(self.handle_edit_clicked, i))
+            top_row.addWidget(edit_btn)
+
+            card_layout.addLayout(top_row)
+
+            button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
             button = QPushButton(f"Card {i + 1}")
             button.setStyleSheet(
                 f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
             )
             button.clicked.connect(partial(self.handle_card_clicked, i))
-            grid.addWidget(button, i // 3, i % 3)
+            card_layout.addWidget(button)
+
+            grid.addWidget(card, i // 3, i % 3)
         layout.addWidget(dashboard)
 
         self.setCentralWidget(central)
@@ -116,6 +138,11 @@ class MainWindow(QMainWindow):
         """Log which navigation button was clicked."""
         logger.info("Nav %s clicked", index + 1)
         self.statusBar().showMessage(f"Nav {index + 1} clicked")
+
+    def handle_edit_clicked(self, index: int) -> None:
+        """Log edit button presses for each card."""
+        logger.info("Card %s edit", index + 1)
+        self.statusBar().showMessage(f"Edit card {index + 1}")
 
     def toggle_theme(self) -> None:
         """Switch between dark and high contrast themes."""

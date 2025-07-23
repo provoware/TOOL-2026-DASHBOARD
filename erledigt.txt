@@ -41,3 +41,4 @@ T37 Footer Version/Pfad :: 2025-07-23
 T38 Headerleiste zentriert :: 2025-07-23
 T39 Sidebar-Icons und Suchfeld :: 2025-07-23
 T40 Karten farbig rahmen :: 2025-07-23
+T41 Edit-Icon je Karte :: 2025-07-23
