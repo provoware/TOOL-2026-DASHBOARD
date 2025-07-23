@@ -6,7 +6,13 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from PySide6.QtWidgets import QApplication, QLabel, QPushButton, QWidget  # noqa: E402
+from PySide6.QtWidgets import (
+    QApplication,
+    QLabel,
+    QPushButton,
+    QWidget,
+    QLineEdit,
+)  # noqa: E402
 from modultool.logger import logger  # noqa: E402
 from app import MainWindow  # noqa: E402
 from modultool import config  # noqa: E402
@@ -88,6 +94,31 @@ def test_help_tooltip_on_first_nav():
     sidebar = window.findChild(QWidget, "sidebar")
     button = sidebar.findChildren(QPushButton)[0]
     assert button.toolTip() == "\u00d6ffnet die Hauptansicht"
+    window.close()
+    app.quit()
+
+
+def test_sidebar_has_search_field():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    sidebar = window.findChild(QWidget, "sidebar")
+    search = sidebar.findChild(QLineEdit, "search")
+    assert search is not None
+    assert search.placeholderText() == "Suchen..."
+    window.close()
+    app.quit()
+
+
+def test_nav_buttons_have_icons():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    sidebar = window.findChild(QWidget, "sidebar")
+    buttons = [sidebar.findChild(QPushButton, f"nav{i+1}") for i in range(3)]
+    assert all(not btn.icon().isNull() for btn in buttons)
     window.close()
     app.quit()
 

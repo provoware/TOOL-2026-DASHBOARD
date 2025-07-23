@@ -4,11 +4,13 @@ from PySide6.QtWidgets import (
     QGridLayout,
     QHBoxLayout,
     QLabel,
+    QLineEdit,
     QMainWindow,
     QStatusBar,
     QPushButton,
     QVBoxLayout,
     QWidget,
+    QStyle,
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeySequence, QShortcut
@@ -50,8 +52,26 @@ class MainWindow(QMainWindow):
 
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
+
+        title = QLabel("ModulTool", objectName="sidebar_title")
+        title_font = title.font()
+        title_font.setBold(True)
+        title.setFont(title_font)
+        side_layout.addWidget(title)
+
+        search = QLineEdit(objectName="search")
+        search.setPlaceholderText("Suchen...")
+        side_layout.addWidget(search)
+
+        icons = [
+            self.style().standardIcon(QStyle.SP_FileIcon),
+            self.style().standardIcon(QStyle.SP_DirIcon),
+            self.style().standardIcon(QStyle.SP_DesktopIcon),
+        ]
         for i in range(3):
-            nav_button = QPushButton(f"Nav {i + 1}", objectName=f"nav{i + 1}")
+            nav_button = QPushButton(
+                f"Nav {i + 1}", icon=icons[i], objectName=f"nav{i + 1}"
+            )
             nav_button.clicked.connect(partial(self.handle_nav_clicked, i))
             if i == 0:
                 register_help(nav_button, "\u00d6ffnet die Hauptansicht")
