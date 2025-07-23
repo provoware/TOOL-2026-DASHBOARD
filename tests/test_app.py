@@ -123,6 +123,18 @@ def test_nav_buttons_have_icons():
     app.quit()
 
 
+def test_cards_have_colored_frames():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+
+    dashboard = window.findChild(QWidget, "dashboard")
+    buttons = dashboard.findChildren(QPushButton)
+    assert all("border" in btn.styleSheet() for btn in buttons)
+    window.close()
+    app.quit()
+
+
 def test_toggle_theme_switches_stylesheet(tmp_path, monkeypatch):
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
     theme_dir = tmp_path / "themes"

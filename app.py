@@ -80,8 +80,22 @@ class MainWindow(QMainWindow):
 
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
+        colors = [
+            "#f8a",
+            "#8fa",
+            "#acf",
+            "#fc8",
+            "#8cf",
+            "#faf",
+            "#faa",
+            "#afa",
+            "#aaf",
+        ]
         for i in range(9):
             button = QPushButton(f"Card {i + 1}")
+            button.setStyleSheet(
+                f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+            )
             button.clicked.connect(partial(self.handle_card_clicked, i))
             grid.addWidget(button, i // 3, i % 3)
         layout.addWidget(dashboard)
