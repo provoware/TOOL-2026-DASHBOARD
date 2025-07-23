@@ -3,12 +3,14 @@ from PySide6.QtWidgets import (
     QApplication,
     QGridLayout,
     QHBoxLayout,
+    QLabel,
     QMainWindow,
     QStatusBar,
     QPushButton,
     QVBoxLayout,
     QWidget,
 )
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeySequence, QShortcut
 from modultool.settings_panel import SettingsDialog
 from modultool import config
@@ -36,7 +38,15 @@ class MainWindow(QMainWindow):
         QShortcut(QKeySequence("F8"), self, activated=self.open_settings)
 
         central = QWidget()
-        layout = QHBoxLayout(central)
+        outer_layout = QVBoxLayout(central)
+        header = QLabel(
+            "Genrenarchiv \u2013 alle \u00c4nderungen gespeichert",
+            objectName="header",
+        )
+        header.setAlignment(Qt.AlignCenter)
+        outer_layout.addWidget(header)
+        layout = QHBoxLayout()
+        outer_layout.addLayout(layout)
 
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
