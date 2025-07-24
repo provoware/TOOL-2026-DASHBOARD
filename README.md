@@ -20,3 +20,19 @@ Fertige Videos landen im gewählten Ausgabeverzeichnis. Verarbeitete Originale w
 - Die wichtigsten Befehle lassen sich über die Menüs oder Tastenkürzel bedienen.
 - Unter *Ansicht → Farbschema* kann zwischen hellem, dunklem und kontrastreichem Design gewechselt werden.
 - Sollte etwas nicht funktionieren, hilft ein Blick in die Logdatei über *Hilfe → Logdatei öffnen*.
+
+## Weiterführende Tipps (für Laien)
+- **Programme starten**: `python3 videobatch_launcher.py` richtet alles ein und öffnet die grafische Oberfläche (GUI). Zum direkten Testen kann `python3 videobatch_gui.py` verwendet werden.
+- **Befehle im Terminal (Konsole)**:
+  - Videos ohne GUI erstellen:
+    ```
+    python3 videobatch_extra.py --img bild1.jpg bild2.jpg --aud ton1.mp3 ton2.mp3 --out ausgabe_ordner
+    ```
+    Dabei steht `--img` für die Bilder, `--aud` für die Audios und `--out` für den Zielordner.
+  - Selbsttest ausführen:
+    ```
+    python3 videobatch_extra.py --selftest
+    ```
+    So wird geprüft, ob alles korrekt funktioniert.
+- **Schrift anpassen**: Über *Ansicht* lassen sich mit "Schrift +" oder "Schrift -" die Texte vergrößern bzw. verkleinern.
+- **Kurzanleitung**: *Hilfe → Kurzanleitung* zeigt eine kurze Erläuterung aller Schritte.

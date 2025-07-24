@@ -4,3 +4,5 @@
 - Buttons mit Tooltips versehen
 - README mit Kurzanleitung erstellt
 - CLI prüft jetzt auf vorhandenes ffmpeg
+- Hilfe-Menü ergänzt (Kurzanleitung)
+- README enthält zusätzliche Befehle für Laien

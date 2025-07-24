@@ -64,3 +64,5 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T45 Hilfe aktualisieren
 - [x] T46 README erstellen
 - [x] T47 CLI ffmpeg-Prüfung
+- [x] T48 Kurzanleitung im Hilfe-Menü
+- [x] T49 Laien-Tipps im README

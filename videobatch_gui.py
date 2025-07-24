@@ -479,7 +479,11 @@ class MainWindow(QtWidgets.QMainWindow):
         m_option.addAction(self.act_copy_only)
 
         m_hilfe = menubar.addMenu("Hilfe")
-        act_log = QAction("Logdatei öffnen", self); act_log.triggered.connect(lambda: QtGui.QDesktopServices.openUrl(QtCore.QUrl.fromLocalFile(str(LOG_FILE))))
+        act_manual = QAction("Kurzanleitung", self)
+        act_manual.triggered.connect(self._show_help)
+        act_log = QAction("Logdatei öffnen", self)
+        act_log.triggered.connect(lambda: QtGui.QDesktopServices.openUrl(QtCore.QUrl.fromLocalFile(str(LOG_FILE))))
+        m_hilfe.addAction(act_manual)
         m_hilfe.addAction(act_log)
 
     def _change_font(self, delta:int):
@@ -506,6 +510,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.theme = name
         self._apply_theme()
         self.settings.setValue("ui/theme", name)
+
+    def _show_help(self):
+        dlg = QtWidgets.QDialog(self)
+        dlg.setWindowTitle("Kurzanleitung")
+        layout = QtWidgets.QVBoxLayout(dlg)
+        pane = HelpPane()
+        layout.addWidget(pane)
+        btn = QtWidgets.QPushButton("Schließen")
+        btn.clicked.connect(dlg.accept)
+        layout.addWidget(btn, alignment=Qt.AlignRight)
+        dlg.exec()
 
     def _add_form(self, layout: QtWidgets.QFormLayout, label: str, widget: QtWidgets.QWidget, help_text: str):
         widget.setToolTip(help_text); widget.setStatusTip(help_text)
