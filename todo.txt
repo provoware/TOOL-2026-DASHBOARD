@@ -57,8 +57,8 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T39 Sidebar-Icons und Suchfeld
 - [x] T40 Karten farbig rahmen
 - [x] T41 Edit-Icon je Karte
-- [ ] T42 Rechte Spalte als Groupbox
-- [ ] T43 Stats live anzeigen
+ - [x] T42 Rechte Spalte als Groupbox
+ - [x] T43 Stats live anzeigen
 \n2025-07-24: Repository bereinigt, nur VideoBatch-Dateien behalten.
 - [x] T44 Farbschema-Auswahl
 - [x] T45 Hilfe aktualisieren

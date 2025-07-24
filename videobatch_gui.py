@@ -380,9 +380,22 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.settings_widget = QtWidgets.QWidget(); self.settings_widget.setLayout(form)
 
-        left_split  = QtWidgets.QSplitter(Qt.Vertical); left_split.addWidget(pool_tabs); left_split.addWidget(self.settings_widget)
-        right_split = QtWidgets.QSplitter(Qt.Vertical); right_split.addWidget(self.table); right_split.addWidget(self.help_pane)
-        grid_split  = QtWidgets.QSplitter(Qt.Horizontal); grid_split.addWidget(left_split); grid_split.addWidget(right_split)
+        left_split  = QtWidgets.QSplitter(Qt.Vertical)
+        left_split.addWidget(pool_tabs)
+        left_split.addWidget(self.settings_widget)
+
+        right_split = QtWidgets.QSplitter(Qt.Vertical)
+        right_split.addWidget(self.table)
+        right_split.addWidget(self.help_pane)
+
+        right_group = QtWidgets.QGroupBox("Datei-Paare")
+        rg_layout = QtWidgets.QVBoxLayout(right_group)
+        rg_layout.setContentsMargins(0, 0, 0, 0)
+        rg_layout.addWidget(right_split)
+
+        grid_split  = QtWidgets.QSplitter(Qt.Horizontal)
+        grid_split.addWidget(left_split)
+        grid_split.addWidget(right_group)
 
         self.progress_total = QtWidgets.QProgressBar(); self.progress_total.setFormat("%p% gesamt")
         self.log_edit = QtWidgets.QPlainTextEdit(); self.log_edit.setReadOnly(True); self.log_edit.setMaximumBlockCount(5000)
@@ -677,8 +690,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def _on_row_progress(self,row:int,perc:float):
         if 0<=row<len(self.pairs):
-            self.pairs[row].progress=perc
+            item=self.pairs[row]
+            item.progress=perc
             idx=self.model.index(row,6); self.model.dataChanged.emit(idx,idx)
+            if perc>=100 and item.status!="FERTIG":
+                item.status="FERTIG"
+                idx2=self.model.index(row,7)
+                self.model.dataChanged.emit(idx2,idx2)
+                self._update_counts()
 
     def _on_overall_progress(self,perc:float):
         v=int(perc); self.progress_total.setValue(v); self.dashboard.set_progress(v)

@@ -36,3 +36,12 @@ Fertige Videos landen im gewählten Ausgabeverzeichnis. Verarbeitete Originale w
     So wird geprüft, ob alles korrekt funktioniert.
 - **Schrift anpassen**: Über *Ansicht* lassen sich mit "Schrift +" oder "Schrift -" die Texte vergrößern bzw. verkleinern.
 - **Kurzanleitung**: *Hilfe → Kurzanleitung* zeigt eine kurze Erläuterung aller Schritte.
+- **Umgebung zurücksetzen**: Falls etwas hakt, kann der Ordner `.videotool_env` gelöscht werden.
+  Danach `python3 videobatch_launcher.py` erneut starten, um alles frisch einzurichten.
+- **ffmpeg installieren**: Sollte die Meldung "ffmpeg fehlt" erscheinen, hilft unter
+  Linux meist der Befehl:
+  ```
+  sudo apt install ffmpeg
+  ```
+  Unter Windows muss das Programm "ffmpeg" separat heruntergeladen und im
+  `PATH` (System-Suchpfad) eingetragen werden.

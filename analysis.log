@@ -6,3 +6,6 @@
 - CLI prüft jetzt auf vorhandenes ffmpeg
 - Hilfe-Menü ergänzt (Kurzanleitung)
 - README enthält zusätzliche Befehle für Laien
+- Rechte Spalte der GUI jetzt als Groupbox
+- Statistiken aktualisieren sich live während des Encodings
+- README mit Hinweisen zum Zurücksetzen und ffmpeg-Installation ergänzt
