@@ -1,8 +1,11 @@
 # =========================================
 # QUICKSTART
 # Start (alles automatisch):   python3 videobatch_launcher.py
+# Direktes GUI (ohne Setup):   python3 videobatch_gui.py
+# CLI Variante:                python3 videobatch_extra.py --img bild.jpg --aud ton.mp3 --out outdir
+# Umgebung zurücksetzen:       rm -rf .videotool_env && python3 videobatch_launcher.py
+# ffmpeg installieren (Linux): sudo apt install ffmpeg
 # Edit mit micro:              micro videobatch_launcher.py
-# Venv löschen (Reset):        rm -rf .videotool_env
 # =========================================
 
 from __future__ import annotations

@@ -2,6 +2,9 @@
 # QUICKSTART
 # Direktstart (wenn alles installiert):  python3 videobatch_gui.py
 # Empfohlen (Auto-Setup):                python3 videobatch_launcher.py
+# CLI Variante:                          python3 videobatch_extra.py --img a.jpg --aud b.mp3 --out ausgabe
+# Reset (neu einrichten):                rm -rf .videotool_env && python3 videobatch_launcher.py
+# ffmpeg installieren (Linux):           sudo apt install ffmpeg
 # Edit mit micro:                        micro videobatch_gui.py
 # =========================================
 
@@ -289,7 +292,11 @@ class HelpPane(QtWidgets.QTextBrowser):
             "</ol>"
             "<p>Dateinamen bestehen aus dem Audio-Namen und einem Zeitstempel.</p>"
             "<p>Doppelklick auf Tabellenzellen ermöglicht Änderungen.</p>"
-            "<p>Nach erfolgreichem Durchlauf werden die genutzten Dateien in den Ordner 'benutzte_dateien' verschoben.</p>"
+            "<p>Nach dem Lauf landen die Originale im Ordner 'benutzte_dateien'.</p>"
+            "<p>Programmstart: <code>python3 videobatch_launcher.py</code> richtet alles automatisch ein.</p>"
+            "<p>Bei Problemen <code>.videotool_env</code> löschen und erneut starten.</p>"
+            "<p>Fehlt <code>ffmpeg</code>, hilft meist <code>sudo apt install ffmpeg</code>.</p>"
+            "<p>Farbschema und Schriftgröße finden Sie unter <b>Ansicht</b>.</p>"
         )
 
 class InfoDashboard(QtWidgets.QWidget):

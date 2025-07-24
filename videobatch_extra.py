@@ -1,8 +1,11 @@
 # =========================================
 # QUICKSTART
 # CLI-Encode:  python3 videobatch_extra.py --img 1.jpg 2.jpg --aud 1.mp3 2.mp3 --out outdir
-# Selftests:   python3 videobatch_extra.py --selftest
-# Edit:        micro videobatch_extra.py
+# GUI starten: python3 videobatch_gui.py
+# Umgebung neu: rm -rf .videotool_env && python3 videobatch_launcher.py
+# ffmpeg holen: sudo apt install ffmpeg
+# Selftests:    python3 videobatch_extra.py --selftest
+# Edit:         micro videobatch_extra.py
 # =========================================
 
 # videobatch_extra.py
