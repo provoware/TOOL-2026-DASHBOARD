@@ -1,0 +1,6 @@
+2025-07-24 Verbesserungen an VideoBatchTool:
+- Farbschema (hell, dunkel, kontrast) integriert
+- Hilfefenster vereinfacht
+- Buttons mit Tooltips versehen
+- README mit Kurzanleitung erstellt
+- CLI prüft jetzt auf vorhandenes ffmpeg

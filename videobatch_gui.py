@@ -32,6 +32,21 @@ logging.basicConfig(
 )
 logger = logging.getLogger("VideoBatchTool")
 
+# ---------- Themes ----------
+THEMES = {
+    "hell": "",
+    "dunkel": (
+        "QWidget {background:#2b2b2b;color:#f0f0f0;}"
+        "QPushButton {background:#444;border:1px solid #666;color:#f0f0f0;}"
+        "QLineEdit, QPlainTextEdit, QTextEdit {background:#3b3b3b;color:#f0f0f0;}"
+    ),
+    "kontrast": (
+        "QWidget {background:#000;color:#fff;}"
+        "QPushButton {background:#ff0;color:#000;font-weight:bold;}"
+        "QLineEdit, QPlainTextEdit, QTextEdit {background:#000;color:#fff;border:1px solid #fff;}"
+    ),
+}
+
 # ---------- Helpers ----------
 def which(p: str): return shutil.which(p)
 def check_ffmpeg(): return which("ffmpeg") and which("ffprobe")
@@ -264,15 +279,18 @@ class HelpPane(QtWidgets.QTextBrowser):
         self.setOpenExternalLinks(True)
         self.setHtml(self._html())
     def _html(self)->str:
-        return ("<h2>Bedienhilfe</h2>"
-                "<ol><li>Bilder & Audios hinzufügen/ziehen</li>"
-                "<li>Auto-Paaren oder manuell zuweisen</li>"
-                "<li>Einstellungen prüfen</li>"
-                "<li>START klicken</li></ol>"
-                "<ul><li>Dateiname = Audio + Zeitstempel</li>"
-                "<li>Doppelklick auf Zellen editiert Pfade</li>"
-                "<li>Tooltips zeigen volle Pfade</li>"
-                "<li>Nach Erfolg Archivierung</li></ul>")
+        return (
+            "<h2>Kurzanleitung</h2>"
+            "<ol>"
+            "<li>Per Drag & Drop oder über die Buttons Bilder und Audios laden.</li>"
+            "<li>'Auto-Paaren' ordnet passende Dateien zu.</li>"
+            "<li>Bei Bedarf Einstellungen prüfen.</li>"
+            "<li>Auf <b>START</b> klicken und abwarten.</li>"
+            "</ol>"
+            "<p>Dateinamen bestehen aus dem Audio-Namen und einem Zeitstempel.</p>"
+            "<p>Doppelklick auf Tabellenzellen ermöglicht Änderungen.</p>"
+            "<p>Nach erfolgreichem Durchlauf werden die genutzten Dateien in den Ordner 'benutzte_dateien' verschoben.</p>"
+        )
 
 class InfoDashboard(QtWidgets.QWidget):
     def __init__(self):
@@ -311,6 +329,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.settings = QtCore.QSettings("Provoware", "VideoBatchTool")
         self._font_size = self.settings.value("ui/font_size", 11, int)
+        self.theme = self.settings.value("ui/theme", "hell", str)
 
         sys.excepthook = self._global_exception
 
@@ -375,15 +394,15 @@ class MainWindow(QtWidgets.QMainWindow):
         outer_split.setStretchFactor(0,4); outer_split.setStretchFactor(1,1)
 
         # Buttons
-        self.btn_add_images = QtWidgets.QPushButton("Bilder wählen")
-        self.btn_add_audios = QtWidgets.QPushButton("Audios wählen")
-        self.btn_auto_pair  = QtWidgets.QPushButton("Auto-Paaren")
-        self.btn_clear      = QtWidgets.QPushButton("Alles löschen")
-        self.btn_undo       = QtWidgets.QPushButton("Undo")
+        self.btn_add_images = QtWidgets.QPushButton("Bilder wählen"); self.btn_add_images.setToolTip("Bilddateien hinzufügen")
+        self.btn_add_audios = QtWidgets.QPushButton("Audios wählen"); self.btn_add_audios.setToolTip("Audiodateien hinzufügen")
+        self.btn_auto_pair  = QtWidgets.QPushButton("Auto-Paaren"); self.btn_auto_pair.setToolTip("Bilder und Audios automatisch zuordnen")
+        self.btn_clear      = QtWidgets.QPushButton("Alles löschen"); self.btn_clear.setToolTip("Listen leeren")
+        self.btn_undo       = QtWidgets.QPushButton("Undo"); self.btn_undo.setToolTip("Letzte Aktion rückgängig")
         self.btn_save       = QtWidgets.QPushButton("Projekt speichern")
         self.btn_load       = QtWidgets.QPushButton("Projekt laden")
-        self.btn_encode     = QtWidgets.QPushButton("START")
-        self.btn_stop       = QtWidgets.QPushButton("Stop"); self.btn_stop.setEnabled(False)
+        self.btn_encode     = QtWidgets.QPushButton("START"); self.btn_encode.setToolTip("Encoding starten")
+        self.btn_stop       = QtWidgets.QPushButton("Stop"); self.btn_stop.setToolTip("Vorgang abbrechen"); self.btn_stop.setEnabled(False)
 
         self.btn_encode.setStyleSheet("font-size:16pt;font-weight:bold;background:#005BBB;color:white;padding:6px 14px;")
 
@@ -423,6 +442,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.table.doubleClicked.connect(self._show_statusbar_path)
 
         self._apply_font()
+        self._apply_theme()
         self.restoreGeometry(self.settings.value("ui/geometry", b"", bytes))
         self.restoreState(self.settings.value("ui/window_state", b"", bytes))
 
@@ -439,6 +459,19 @@ class MainWindow(QtWidgets.QMainWindow):
         act_font_minus = QAction("Schrift -", self);  act_font_minus.triggered.connect(lambda: self._change_font(-1))
         act_font_reset = QAction("Schrift Reset", self); act_font_reset.triggered.connect(lambda: self._set_font(11))
         m_ansicht.addActions([act_font_plus, act_font_minus, act_font_reset])
+
+        m_theme = m_ansicht.addMenu("Farbschema")
+        group = QtGui.QActionGroup(self)
+        self.theme_actions = {}
+        for key, label in [("hell","Hell"),("dunkel","Dunkel"),("kontrast","Kontrast")]:
+            act = QAction(label, self, checkable=True)
+            act.setData(key)
+            if key == self.theme:
+                act.setChecked(True)
+            group.addAction(act)
+            m_theme.addAction(act)
+            self.theme_actions[key] = act
+        group.triggered.connect(lambda a: self._set_theme(a.data()))
 
         m_option = menubar.addMenu("Optionen")
         self.act_copy_only = QAction("Dateien nur kopieren (nicht verschieben)", self, checkable=True, checked=self.copy_only)
@@ -461,6 +494,18 @@ class MainWindow(QtWidgets.QMainWindow):
     def _apply_font(self):
         f = QtGui.QFont("DejaVu Sans", self._font_size)
         self.setFont(f)
+
+    def _apply_theme(self):
+        app = QtWidgets.QApplication.instance()
+        if app:
+            app.setStyleSheet(THEMES.get(self.theme, ""))
+
+    def _set_theme(self, name:str):
+        if name not in THEMES:
+            return
+        self.theme = name
+        self._apply_theme()
+        self.settings.setValue("ui/theme", name)
 
     def _add_form(self, layout: QtWidgets.QFormLayout, label: str, widget: QtWidgets.QWidget, help_text: str):
         widget.setToolTip(help_text); widget.setStatusTip(help_text)

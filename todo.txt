@@ -11,7 +11,7 @@ Die folgende Liste spiegelt grob die offenen Aufgaben wider (siehe auch OFFEN.md
 
 Weitere Punkte stehen in der Datei OFFEN.md.
 
- (Stand: 2025-07-23)
+ (Stand: 2025-07-24)
 # TODO-Liste
 - [x] T01 Grund-Ordnergerüst anlegen
 - [x] T02 pyproject/requirements minimal
@@ -59,3 +59,8 @@ Weitere Punkte stehen in der Datei OFFEN.md.
 - [x] T41 Edit-Icon je Karte
 - [ ] T42 Rechte Spalte als Groupbox
 - [ ] T43 Stats live anzeigen
+\n2025-07-24: Repository bereinigt, nur VideoBatch-Dateien behalten.
+- [x] T44 Farbschema-Auswahl
+- [x] T45 Hilfe aktualisieren
+- [x] T46 README erstellen
+- [x] T47 CLI ffmpeg-Prüfung

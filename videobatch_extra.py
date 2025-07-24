@@ -7,7 +7,7 @@
 
 # videobatch_extra.py
 from __future__ import annotations
-import sys, subprocess, re, tempfile
+import sys, subprocess, re, tempfile, shutil
 from pathlib import Path
 from datetime import datetime
 from typing import List
@@ -19,8 +19,14 @@ def human_time(s:int)->str:
 def build_out_name(audio:str, out_dir:Path)->Path:
     return out_dir / f"{Path(audio).stem}_{datetime.now().strftime('%Y%m%d-%H%M%S')}.mp4"
 
+def ffmpeg_exists()->bool:
+    return shutil.which("ffmpeg") is not None
+
 def cli_encode(images:List[str], audios:List[str], out_dir:str,
-               width=1920,height=1080,crf=23,preset="ultrafast",abitrate="192k")->int:
+               width=1920,height=1080,crf=23,preset="ultrafast",abitrate="192k") ->int:
+    if not ffmpeg_exists():
+        print("Fehler: ffmpeg nicht gefunden. Bitte installieren.")
+        return 1
     out_dir_p=Path(out_dir); out_dir_p.mkdir(parents=True, exist_ok=True)
     if len(images)!=len(audios):
         print("Fehler: Anzahl Bilder != Anzahl Audios"); return 1
