@@ -48,3 +48,4 @@ T44 Version automatisch laden :: 2025-08-17
 T45 Log-Level per Variable :: 2025-08-17
 T46 Fehler beim Speichern abfangen :: 2025-08-17
 T47 Datenbank-Button Dashboard :: 2025-08-17
+T48 Genresarchiv Untermodul :: 2025-08-17

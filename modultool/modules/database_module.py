@@ -1,9 +1,10 @@
 import sqlite3
 from pathlib import Path
 
-from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QMessageBox
+from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QMessageBox, QTabWidget
 
 from .base_module import BaseModule
+from .genre_archive_module import GenreArchiveWidget
 from ..config import get_data_dir
 from ..logger import logger
 
@@ -30,6 +31,10 @@ class DatabaseWindow(QDialog):
                 QMessageBox.information(self, "Abbruch", "Keine Datenbank erstellt.")
         else:
             layout.addWidget(QLabel("Datenbank vorhanden."))
+
+        self.tabs = QTabWidget()
+        self.tabs.addTab(GenreArchiveWidget(), "Genresarchiv")
+        layout.addWidget(self.tabs)
 
 
 class DatabaseModule(BaseModule):

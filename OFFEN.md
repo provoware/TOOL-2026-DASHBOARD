@@ -54,6 +54,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T45 (P2) Log-Level per Variable :: Umgebungsvariable steuert Logging :: MODULTOOL_LOG_LEVEL wird ausgewertet
 - [x] T46 (P2) Fehler beim Speichern abfangen :: Statistik-Speicherung robust :: OSError wird geloggt
 - [x] T47 (P2) Datenbank-Button Dashboard :: Button öffnet DB-Fenster :: Klick erstellt fehlende Datenbank
+- [x] T48 (P2) Genresarchiv Untermodul :: Kategorien-Archiv mit Zufallsgenerator :: Ausgabe kopiert und geloggt
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
