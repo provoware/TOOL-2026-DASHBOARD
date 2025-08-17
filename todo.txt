@@ -1,2 +1,1 @@
-
-- Uee: Theme-Dokumentation (docs/themes.md)
+- [x] Uee: Theme-Dokumentation (docs/themes.md)
