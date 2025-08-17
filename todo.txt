@@ -1,3 +1,8 @@
+UX1 abgeschlossen - Panels per Splitter verschiebbar.
+UX2 abgeschlossen - Kartenlayout für kleine Fenster optimiert.
+UX3 abgeschlossen - Modernes Material-Theme hinzugefügt.
+UX4 abgeschlossen - Fenstergröße wird gespeichert.
+UX5 abgeschlossen - Fenster-Mindestgröße und Dark-Buttons.
 - [x] Uee: Theme-Dokumentation (docs/themes.md)
 T41 abgeschlossen - Edit-Icon Karten.
 
@@ -12,7 +17,6 @@ T41 abgeschlossen - Edit-Icon Karten.
 - Uka: Genre-Schnelleingabe im Dashboard (app.py)
 - Ukb: Test für Dashboard-Genre-Schnelleingabe (tests/test_dashboard_quick_entry.py)
 - Tab: High-Contrast-Theme für Buttons & Eingabefelder erweitern (highcontrast.qss)
-- Ukf: Fenster-Mindestgröße und Dark-Buttons (app.py, dark.qss)
 - T51: Dashboard-Tests anpassen (tests/test_app.py)
 - Ufa: Automatische Tests für Theme-Lader (tests/test_theme_loader.py)
 - Ufb: GitHub-Action für Tests (.github/workflows/tests.yml)

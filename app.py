@@ -13,8 +13,9 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QStyle,
+    QSplitter,
 )
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QSettings, QByteArray
 from PySide6.QtGui import QKeySequence, QShortcut, QFont
 from modultool.settings_panel import SettingsDialog
 from modultool import config
@@ -37,7 +38,9 @@ class MainWindow(QMainWindow):
     def __init__(self, current_theme: str = "dark"):
         super().__init__()
         self.setWindowTitle("ModulTool")
-        self.setMinimumSize(800, 600)
+        self.setMinimumSize(640, 480)
+
+        self.settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "modul-tool", "main")
 
         self.genre_archive = GenreArchiveWidget()
         self.genre_archive.hide()
@@ -60,9 +63,10 @@ class MainWindow(QMainWindow):
         )
         header.setAlignment(Qt.AlignCenter)
         outer_layout.addWidget(header)
-        layout = QHBoxLayout()
-        layout.setSpacing(8)
-        outer_layout.addLayout(layout)
+        splitter = QSplitter()
+        splitter.setObjectName("main_splitter")
+        splitter.setChildrenCollapsible(False)
+        outer_layout.addWidget(splitter)
 
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
@@ -90,11 +94,13 @@ class MainWindow(QMainWindow):
             if i == 0:
                 register_help(nav_button, "\u00d6ffnet die Hauptansicht")
             side_layout.addWidget(nav_button)
-        layout.addWidget(sidebar)
+        splitter.addWidget(sidebar)
 
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
         grid.setSpacing(8)
+        for i in range(3):
+            grid.setColumnStretch(i, 1)
         colors = [
             "#ff88aa",
             "#88ffaa",
@@ -156,7 +162,7 @@ class MainWindow(QMainWindow):
                 button.clicked.connect(partial(self.handle_card_clicked, i))
                 card_layout.addWidget(button)
             grid.addWidget(card, i // 3, i % 3)
-        layout.addWidget(dashboard)
+        splitter.addWidget(dashboard)
 
         right_panel = QWidget(objectName="right_panel")
         right_layout = QVBoxLayout(right_panel)
@@ -183,7 +189,8 @@ class MainWindow(QMainWindow):
         st_layout.addWidget(self.module_label)
         right_layout.addWidget(stats_box)
 
-        layout.addWidget(right_panel)
+        splitter.addWidget(right_panel)
+        splitter.setStretchFactor(1, 1)
 
         event_bus.subscribe("module.open", self.update_stats_labels)
         event_bus.subscribe("error.occurred", self.update_stats_labels)
@@ -196,6 +203,7 @@ class MainWindow(QMainWindow):
         path = str(config.get_root_dir())
         status.showMessage(f"Version {version} - {path}")
         self.setStatusBar(status)
+
 
     def handle_card_clicked(self, index: int) -> None:
         """Log which card was clicked."""
@@ -269,16 +277,23 @@ class MainWindow(QMainWindow):
         dialog = create_help_dialog()
         dialog.exec()
 
+    def closeEvent(self, event):
+        self.settings.setValue("geometry", self.saveGeometry())
+        self.settings.sync()
+        super().closeEvent(event)
+
 
 def main() -> int:
     """Start the GUI application."""
     app = QApplication(sys.argv)
     app.setFont(QFont("Arial", 12))
-    current_theme = load_user_theme()
-    apply_theme(app, current_theme)
-    window = MainWindow(current_theme=current_theme)
-    apply_theme(app, "dark")
-    window = MainWindow()
+    apply_theme(app, "material")
+    window = MainWindow(current_theme="material")
+    geometry = window.settings.value("geometry", QByteArray(), type=QByteArray)
+    if not geometry.isEmpty():
+        window.restoreGeometry(geometry)
+    else:
+        window.resize(1024, 768)
     window.show()
     show_onboarding(window)
     selfcheck_scheduler.start()

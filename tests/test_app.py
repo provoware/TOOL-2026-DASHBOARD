@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
     QLineEdit,
 )  # noqa: E402
+from PySide6.QtCore import QSettings  # noqa: E402
 from modultool.logger import logger  # noqa: E402
 from app import MainWindow  # noqa: E402
 from modultool import config  # noqa: E402
@@ -23,6 +24,16 @@ def test_window_title():
     app = QApplication.instance() or QApplication([])
     window = MainWindow()
     assert window.windowTitle() == "ModulTool"
+    window.close()
+    app.quit()
+
+
+def test_minimum_window_size():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+    min_size = window.minimumSize()
+    assert min_size.width() == 640 and min_size.height() == 480
     window.close()
     app.quit()
 
@@ -195,4 +206,18 @@ def test_toggle_maximize_restores_state(monkeypatch):
     window.toggle_maximize()
     assert not window.isMaximized()
     window.close()
+    app.quit()
+
+
+def test_window_geometry_persist(tmp_path, monkeypatch):
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path))
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+    window.resize(900, 700)
+    window.show()
+    app.processEvents()
+    window.close()
+    settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "modul-tool", "main")
+    assert settings.value("geometry") is not None
     app.quit()

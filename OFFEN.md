@@ -65,6 +65,11 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T55 (P2) Nutzer-Theme-Verzeichnis :: Themes aus Nutzerordner laden :: Nutzer-Theme überschreibt Standard
 - [x] T56 (P2) Kontrastprüf-Skript :: Skript prüft Theme-Kontraste :: Warnung bei Ratio <4.5
 - [x] T57 (P2) Farb-Layout an Vorlage :: Farben und Layout laut LAYOUT.png :: Sidebar/Randfarben und Karten angepasst
+- [x] UX1 (P2) Splitter für flexible Panelbreiten :: Seiten verschiebbar :: QSplitter passt Sidebar, Dashboard und rechte Spalte an
+- [x] UX2 (P2) Kartenlayout kleine Fenster :: Spalten passen sich an :: QGridLayout mit Spalten-Stretch
+- [x] UX3 (P2) Material-Theme :: Modernes Farbschema verfügbar :: material.qss + Auswahl im Settings-Dialog
+- [x] UX4 (P2) Fenstergröße merken :: Letzte Größe beim Start laden :: QSettings speichert Geometrie
+- [x] UX5 (P2) Fenster-Mindestgröße & dunkle Buttons :: Fenster nicht kleiner als 640x480, Buttons im Dark-Theme dunkler :: Mindestgröße gesetzt und Buttons angepasst
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
