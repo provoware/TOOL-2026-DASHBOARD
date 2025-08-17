@@ -25,6 +25,7 @@ from modultool.selfcheck import selfcheck_scheduler
 from modultool.onboarding import show_onboarding
 from modultool.event_bus import event_bus
 from modultool.stats import stats
+from modultool.modules.database_module import DatabaseModule
 import sys
 
 
@@ -113,13 +114,23 @@ class MainWindow(QMainWindow):
             top_row.addWidget(edit_btn)
 
             card_layout.addLayout(top_row)
-
-            button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
-            button.setStyleSheet(
-                f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
-            )
-            button.clicked.connect(partial(self.handle_card_clicked, i))
-            card_layout.addWidget(button)
+            if i == 0:
+                button = QPushButton("Datenbank", objectName="db_button")
+                button.setStyleSheet(
+                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+                )
+                button.clicked.connect(self.open_database_module)
+                card_layout.addWidget(button)
+                hint = QLabel("Verwaltet die Datenbank", objectName="db_hint")
+                hint.setAlignment(Qt.AlignCenter)
+                card_layout.addWidget(hint)
+            else:
+                button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
+                button.setStyleSheet(
+                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+                )
+                button.clicked.connect(partial(self.handle_card_clicked, i))
+                card_layout.addWidget(button)
 
             grid.addWidget(card, i // 3, i % 3)
         layout.addWidget(dashboard)
@@ -144,9 +155,7 @@ class MainWindow(QMainWindow):
         stats_box = QGroupBox("Nutzerstatistik", objectName="stats_box")
         st_layout = QVBoxLayout(stats_box)
         self.error_label = QLabel("Fehler: 0", objectName="error_label")
-        self.module_label = QLabel(
-            "Beliebtestes Modul: -", objectName="module_label"
-        )
+        self.module_label = QLabel("Beliebtestes Modul: -", objectName="module_label")
         st_layout.addWidget(self.error_label)
         st_layout.addWidget(self.module_label)
         right_layout.addWidget(stats_box)
@@ -179,6 +188,11 @@ class MainWindow(QMainWindow):
         """Log edit button presses for each card."""
         logger.info("Card %s edit", index + 1)
         self.statusBar().showMessage(f"Edit card {index + 1}")
+
+    def open_database_module(self) -> None:
+        """Open the database management window."""
+        db = DatabaseModule()
+        db.start()
 
     def update_stats_labels(self, *args) -> None:
         """Refresh statistics labels with current values."""

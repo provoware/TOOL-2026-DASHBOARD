@@ -53,6 +53,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T44 (P2) Version automatisch laden :: Version aus Paketinfo lesen :: APP_VERSION wird dynamisch gesetzt
 - [x] T45 (P2) Log-Level per Variable :: Umgebungsvariable steuert Logging :: MODULTOOL_LOG_LEVEL wird ausgewertet
 - [x] T46 (P2) Fehler beim Speichern abfangen :: Statistik-Speicherung robust :: OSError wird geloggt
+- [x] T47 (P2) Datenbank-Button Dashboard :: Button öffnet DB-Fenster :: Klick erstellt fehlende Datenbank
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
