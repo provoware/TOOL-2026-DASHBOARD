@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QStyle,
+    QSplitter,
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeySequence, QShortcut, QFont
@@ -60,9 +61,10 @@ class MainWindow(QMainWindow):
         )
         header.setAlignment(Qt.AlignCenter)
         outer_layout.addWidget(header)
-        layout = QHBoxLayout()
-        layout.setSpacing(8)
-        outer_layout.addLayout(layout)
+        splitter = QSplitter()
+        splitter.setObjectName("main_splitter")
+        splitter.setChildrenCollapsible(False)
+        outer_layout.addWidget(splitter)
 
         sidebar = QWidget(objectName="sidebar")
         side_layout = QVBoxLayout(sidebar)
@@ -90,7 +92,7 @@ class MainWindow(QMainWindow):
             if i == 0:
                 register_help(nav_button, "\u00d6ffnet die Hauptansicht")
             side_layout.addWidget(nav_button)
-        layout.addWidget(sidebar)
+        splitter.addWidget(sidebar)
 
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
@@ -156,7 +158,7 @@ class MainWindow(QMainWindow):
                 button.clicked.connect(partial(self.handle_card_clicked, i))
                 card_layout.addWidget(button)
             grid.addWidget(card, i // 3, i % 3)
-        layout.addWidget(dashboard)
+        splitter.addWidget(dashboard)
 
         right_panel = QWidget(objectName="right_panel")
         right_layout = QVBoxLayout(right_panel)
@@ -183,7 +185,8 @@ class MainWindow(QMainWindow):
         st_layout.addWidget(self.module_label)
         right_layout.addWidget(stats_box)
 
-        layout.addWidget(right_panel)
+        splitter.addWidget(right_panel)
+        splitter.setStretchFactor(1, 1)
 
         event_bus.subscribe("module.open", self.update_stats_labels)
         event_bus.subscribe("error.occurred", self.update_stats_labels)

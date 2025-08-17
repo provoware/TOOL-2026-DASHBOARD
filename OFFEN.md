@@ -64,6 +64,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T55 (P2) Nutzer-Theme-Verzeichnis :: Themes aus Nutzerordner laden :: Nutzer-Theme überschreibt Standard
 - [x] T56 (P2) Kontrastprüf-Skript :: Skript prüft Theme-Kontraste :: Warnung bei Ratio <4.5
 - [x] T57 (P2) Farb-Layout an Vorlage :: Farben und Layout laut LAYOUT.png :: Sidebar/Randfarben und Karten angepasst
+- [x] UX1 (P2) Splitter für flexible Panelbreiten :: Seiten verschiebbar :: QSplitter passt Sidebar, Dashboard und rechte Spalte an
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

@@ -1,3 +1,4 @@
+UX1 abgeschlossen - Panels per Splitter verschiebbar.
 T41 abgeschlossen - Edit-Icon Karten.
 
 - T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
@@ -23,3 +24,6 @@ T41 abgeschlossen - Edit-Icon Karten.
 - Uld: Farben im Light-Theme dem neuen Layout anpassen (light.qss)
 - Tyy: Log-Level per Variable steuern (logger.py)
 - Tzz: Fehler beim Speichern abfangen (stats.py)
+- UX2: Kartenlayout für kleine Fenster optimieren (app.py)
+- UX3: Modernes Material-Theme erstellen (themes/material.qss)
+- UX4: Fenstergröße merken (settings_panel.py)
