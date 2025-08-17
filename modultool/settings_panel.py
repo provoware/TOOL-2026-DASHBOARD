@@ -1,6 +1,14 @@
 from __future__ import annotations
 
-from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QComboBox, QSpinBox, QDialogButtonBox, QApplication
+from PySide6.QtWidgets import (
+    QDialog,
+    QVBoxLayout,
+    QLabel,
+    QComboBox,
+    QSpinBox,
+    QDialogButtonBox,
+    QApplication,
+)
 from PySide6.QtGui import QFont
 
 from .theme_loader import apply_theme
@@ -18,7 +26,7 @@ class SettingsDialog(QDialog):
 
         layout.addWidget(QLabel("Theme"))
         self.theme_combo = QComboBox()
-        self.theme_combo.addItems(["dark", "highcontrast"])
+        self.theme_combo.addItems(["dark", "light", "highcontrast"])
         self.theme_combo.setCurrentText(current_theme)
         layout.addWidget(self.theme_combo)
 

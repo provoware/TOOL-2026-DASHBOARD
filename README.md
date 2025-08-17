@@ -2,6 +2,18 @@
 
 Dies ist ein kleines Beispielprojekt. Ziel ist eine modulare Desktop-Anwendung.
 
+## Installation
+
+1. Projekt herunterladen ("clone" = Kopie aus dem Internet holen)
+2. Abhängigkeiten installieren ("dependencies" = nötige Zusatzpakete):
+   ```bash
+   pip install -e .
+   ```
+3. Programm starten:
+   ```bash
+   modultool
+   ```
+
 ## Schnellstart
 
 ```bash
