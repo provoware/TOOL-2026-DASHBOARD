@@ -50,6 +50,9 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T41 (P2) Edit-Icon je Karte :: Kleines Symbol oben rechts :: Klick loggt "edit"
 - [x] T42 (P2) Rechte Spalte als Groupbox :: Bereiche Einstellungen/Hilfe/Statistik gruppiert :: QGroupBox-Stil
 - [x] T43 (P2) Stats live anzeigen :: Fehlerz\u00e4hler und meistgenutztes Modul :: Werte aktualisieren sich
+- [x] T44 (P2) Version automatisch laden :: Version aus Paketinfo lesen :: APP_VERSION wird dynamisch gesetzt
+- [x] T45 (P2) Log-Level per Variable :: Umgebungsvariable steuert Logging :: MODULTOOL_LOG_LEVEL wird ausgewertet
+- [x] T46 (P2) Fehler beim Speichern abfangen :: Statistik-Speicherung robust :: OSError wird geloggt
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

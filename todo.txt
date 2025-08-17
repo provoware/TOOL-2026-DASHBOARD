@@ -1,2 +1,5 @@
 
 - T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
+- T44: Version automatisch laden (config.py)
+- T45: Log-Level per Variable steuern (logger.py)
+- T46: Fehler beim Speichern abfangen (stats.py)
