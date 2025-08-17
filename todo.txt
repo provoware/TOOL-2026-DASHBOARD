@@ -20,3 +20,5 @@
 - Ulb: Theme-Verzeichnis automatisch erstellen (theme_loader.py)
 - Ulc: Kontrastwerte in Datei speichern (scripts/check_colorblindness.py)
 - Uld: Farben im Light-Theme dem neuen Layout anpassen (light.qss)
+- Tyy: Log-Level per Variable steuern (logger.py)
+- Tzz: Fehler beim Speichern abfangen (stats.py)

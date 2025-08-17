@@ -28,6 +28,7 @@ class StatsManager:
 
     def _save(self) -> None:
         try:
+            self.file.parent.mkdir(parents=True, exist_ok=True)
             with self.file.open("w", encoding="utf-8") as f:
                 json.dump(
                     {"modules": self.modules, "errors": self.error_count},
@@ -35,6 +36,7 @@ class StatsManager:
                     indent=2,
                     ensure_ascii=False,
                 )
+            logger.debug("stats saved")
         except OSError as err:
             logger.error("Speichern fehlgeschlagen: %s", err)
 
