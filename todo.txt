@@ -3,6 +3,7 @@ UX2 abgeschlossen - Kartenlayout für kleine Fenster optimiert.
 UX3 abgeschlossen - Modernes Material-Theme hinzugefügt.
 UX4 abgeschlossen - Fenstergröße wird gespeichert.
 UX5 abgeschlossen - Fenster-Mindestgröße und Dark-Buttons.
+- [x] Uee: Theme-Dokumentation (docs/themes.md)
 T41 abgeschlossen - Edit-Icon Karten.
 
 - T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
