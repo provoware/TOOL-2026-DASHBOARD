@@ -1,1 +1,2 @@
 
+- T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
