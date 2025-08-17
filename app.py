@@ -42,6 +42,9 @@ class MainWindow(QMainWindow):
         self.genre_archive = GenreArchiveWidget()
         self.genre_archive.hide()
 
+        self.genre_archive = GenreArchiveWidget()
+        self.genre_archive.hide()
+
         self.current_theme = current_theme
         self._module_maximized = False
         QShortcut(QKeySequence("F1"), self, activated=self.show_help)
@@ -274,6 +277,8 @@ def main() -> int:
     current_theme = load_user_theme()
     apply_theme(app, current_theme)
     window = MainWindow(current_theme=current_theme)
+    apply_theme(app, "dark")
+    window = MainWindow()
     window.show()
     show_onboarding(window)
     selfcheck_scheduler.start()

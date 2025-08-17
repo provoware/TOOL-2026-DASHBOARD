@@ -5,6 +5,7 @@ from .config import get_log_dir
 LOG_DIR = get_log_dir()
 LOG_DIR.mkdir(exist_ok=True)
 LOG_FILE = LOG_DIR / "modultool.log"
+LOG_LEVEL = os.getenv("MODULTOOL_LOG_LEVEL", "INFO").upper()
 
 
 def _get_log_level() -> int:
@@ -18,6 +19,7 @@ def get_logger() -> logging.Logger:
     logger = logging.getLogger("modultool")
     logger.setLevel(_get_log_level())
     if not logger.handlers:
+        logger.setLevel(getattr(logging, LOG_LEVEL, logging.INFO))
         fmt = "%(asctime)s [%(levelname)s] %(message)s"
         file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
         stream_handler = logging.StreamHandler()
