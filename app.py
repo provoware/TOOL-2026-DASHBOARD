@@ -61,6 +61,7 @@ class MainWindow(QMainWindow):
         header.setAlignment(Qt.AlignCenter)
         outer_layout.addWidget(header)
         layout = QHBoxLayout()
+        layout.setSpacing(8)
         outer_layout.addLayout(layout)
 
         sidebar = QWidget(objectName="sidebar")
@@ -93,6 +94,7 @@ class MainWindow(QMainWindow):
 
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
+        grid.setSpacing(8)
         colors = [
             "#ff88aa",
             "#88ffaa",
