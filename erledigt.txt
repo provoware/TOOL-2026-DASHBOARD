@@ -44,3 +44,12 @@ T40 Karten farbig rahmen :: 2025-07-23
 T41 Edit-Icon je Karte :: 2025-07-23
 T42 Rechte Spalte als Groupbox :: 2025-07-23
 T43 Stats live anzeigen :: 2025-07-23
+T44 Version automatisch laden :: 2025-08-17
+T45 Log-Level per Variable :: 2025-08-17
+T46 Fehler beim Speichern abfangen :: 2025-08-17
+T47 Datenbank-Button Dashboard :: 2025-08-17
+T48 Genresarchiv Untermodul :: 2025-08-17
+T49 Light Theme :: 2025-08-17
+T50 High-Contrast Buttons :: 2025-08-17
+T51 Dashboard-Tests anpassen :: 2025-08-17
+T52 README Installation :: 2025-08-17

@@ -3,8 +3,14 @@ from __future__ import annotations
 from pathlib import Path
 import os
 import tempfile
+import importlib.metadata
+import tomllib
 
-APP_VERSION = "0.1.0"
+try:
+    APP_VERSION = importlib.metadata.version("modul-tool")
+except importlib.metadata.PackageNotFoundError:
+    with (Path(__file__).resolve().parent.parent / "pyproject.toml").open("rb") as f:
+        APP_VERSION = tomllib.load(f)["project"]["version"]
 
 # sandbox directory used when sandbox mode is active
 _SANDBOX_DIR: Path | None = None
