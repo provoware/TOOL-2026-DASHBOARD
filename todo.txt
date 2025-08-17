@@ -11,3 +11,4 @@
 - Ukb: Test für Dashboard-Genre-Schnelleingabe (tests/test_dashboard_quick_entry.py)
 - Tab: High-Contrast-Theme für Buttons & Eingabefelder erweitern (highcontrast.qss)
 - Ukf: Fenster-Mindestgröße und Dark-Buttons (app.py, dark.qss)
+- T51: Dashboard-Tests anpassen (tests/test_app.py)

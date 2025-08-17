@@ -57,6 +57,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T48 (P2) Genresarchiv Untermodul :: Kategorien-Archiv mit Zufallsgenerator :: Ausgabe kopiert und geloggt
 - [x] T49 (P2) Light Theme :: Helles Theme für Tageslicht :: 'light' auswählbar und Stylesheet vorhanden
 - [x] T50 (P2) High-Contrast Buttons :: Buttons und Eingabefelder klar erkennbar :: Stylesheet für QPushButton und QLineEdit
+- [x] T51 (P2) Dashboard-Tests anpassen :: Tests reflektieren Spezialkarten :: tests/test_app.py grün
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

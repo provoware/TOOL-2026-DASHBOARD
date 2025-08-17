@@ -91,15 +91,15 @@ class MainWindow(QMainWindow):
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
         colors = [
-            "#f8a",
-            "#8fa",
-            "#acf",
-            "#fc8",
-            "#8cf",
-            "#faf",
-            "#faa",
-            "#afa",
-            "#aaf",
+            "#ff88aa",
+            "#88ffaa",
+            "#aaccff",
+            "#ffcc88",
+            "#88ccff",
+            "#ffaaff",
+            "#ffaaaa",
+            "#aaffaa",
+            "#aaaaff",
         ]
         for i in range(9):
             card = QWidget(objectName=f"card{i + 1}")
@@ -121,10 +121,11 @@ class MainWindow(QMainWindow):
 
             card_layout.addLayout(top_row)
             if i == 0:
-                button = QPushButton("Datenbank", objectName="db_button")
+                button = QPushButton("Datenbank", objectName="card_button1")
                 button.setStyleSheet(
                     f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;",
                 )
+                button.clicked.connect(partial(self.handle_card_clicked, i))
                 button.clicked.connect(self.open_database_module)
                 card_layout.addWidget(button)
                 hint = QLabel("Verwaltet die Datenbank", objectName="db_hint")
