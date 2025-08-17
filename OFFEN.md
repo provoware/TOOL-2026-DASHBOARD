@@ -55,6 +55,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T46 (P2) Fehler beim Speichern abfangen :: Statistik-Speicherung robust :: OSError wird geloggt
 - [x] T47 (P2) Datenbank-Button Dashboard :: Button öffnet DB-Fenster :: Klick erstellt fehlende Datenbank
 - [x] T48 (P2) Genresarchiv Untermodul :: Kategorien-Archiv mit Zufallsgenerator :: Ausgabe kopiert und geloggt
+- [x] T49 (P2) Light Theme :: Helles Theme für Tageslicht :: 'light' auswählbar und Stylesheet vorhanden
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

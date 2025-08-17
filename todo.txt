@@ -5,3 +5,5 @@
 - T46: Fehler beim Speichern abfangen (stats.py)
 - T47: Datenbank-Button testen (app.py, database_module.py)
 - T48: Genresarchiv Untermodul testen (database_module.py, genre_archive_module.py)
+
+- T49: helles Theme einfügen (settings_panel.py, light.qss)
