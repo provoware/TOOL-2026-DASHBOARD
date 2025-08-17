@@ -50,3 +50,4 @@ T46 Fehler beim Speichern abfangen :: 2025-08-17
 T47 Datenbank-Button Dashboard :: 2025-08-17
 T48 Genresarchiv Untermodul :: 2025-08-17
 T49 Light Theme :: 2025-08-17
+T50 High-Contrast Buttons :: 2025-08-17

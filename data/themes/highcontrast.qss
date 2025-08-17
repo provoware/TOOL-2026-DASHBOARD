@@ -2,3 +2,13 @@ QWidget {
     background-color: #000000;
     color: #ffff00;
 }
+
+QPushButton,
+QLineEdit {
+    background-color: #000000;
+    color: #ffff00;
+}
+
+QPushButton:hover {
+    border: 1px solid #ffff00;
+}
