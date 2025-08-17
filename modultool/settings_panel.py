@@ -28,7 +28,7 @@ class SettingsDialog(QDialog):
 
         layout.addWidget(QLabel("Theme"))
         self.theme_combo = QComboBox()
-        self.theme_combo.addItems(["dark", "light", "highcontrast"])
+        self.theme_combo.addItems(["dark", "light", "highcontrast", "material"])
         self.theme_combo.setCurrentText(current_theme)
         layout.addWidget(self.theme_combo)
 

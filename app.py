@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
     QStyle,
     QSplitter,
 )
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QSettings, QByteArray
 from PySide6.QtGui import QKeySequence, QShortcut, QFont
 from modultool.settings_panel import SettingsDialog
 from modultool import config
@@ -39,6 +39,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("ModulTool")
         self.setMinimumSize(800, 600)
+
+        self.settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "modul-tool", "main")
 
         self.genre_archive = GenreArchiveWidget()
         self.genre_archive.hide()
@@ -97,6 +99,8 @@ class MainWindow(QMainWindow):
         dashboard = QWidget(objectName="dashboard")
         grid = QGridLayout(dashboard)
         grid.setSpacing(8)
+        for i in range(3):
+            grid.setColumnStretch(i, 1)
         colors = [
             "#ff88aa",
             "#88ffaa",
@@ -200,6 +204,7 @@ class MainWindow(QMainWindow):
         status.showMessage(f"Version {version} - {path}")
         self.setStatusBar(status)
 
+
     def handle_card_clicked(self, index: int) -> None:
         """Log which card was clicked."""
         logger.info("Card %s clicked", index + 1)
@@ -272,16 +277,21 @@ class MainWindow(QMainWindow):
         dialog = create_help_dialog()
         dialog.exec()
 
+    def closeEvent(self, event):
+        self.settings.setValue("geometry", self.saveGeometry())
+        self.settings.sync()
+        super().closeEvent(event)
+
 
 def main() -> int:
     """Start the GUI application."""
     app = QApplication(sys.argv)
     app.setFont(QFont("Arial", 12))
-    current_theme = load_user_theme()
-    apply_theme(app, current_theme)
-    window = MainWindow(current_theme=current_theme)
-    apply_theme(app, "dark")
-    window = MainWindow()
+    apply_theme(app, "material")
+    window = MainWindow(current_theme="material")
+    geometry = window.settings.value("geometry", QByteArray(), type=QByteArray)
+    if not geometry.isEmpty():
+        window.restoreGeometry(geometry)
     window.show()
     show_onboarding(window)
     selfcheck_scheduler.start()

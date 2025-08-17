@@ -59,3 +59,6 @@ T55 Nutzer-Theme-Verzeichnis :: 2025-08-17
 T56 Kontrastprüf-Skript :: 2025-08-17
 T57 Farb-Layout an Vorlage angepasst - 2025-08-17
 UX1 Splitter für flexible Panelbreiten :: 2025-08-17
+UX2 Kartenlayout kleine Fenster :: 2025-08-17
+UX3 Material-Theme :: 2025-08-17
+UX4 Fenstergröße merken :: 2025-08-17

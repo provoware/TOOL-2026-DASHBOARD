@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
     QLineEdit,
 )  # noqa: E402
+from PySide6.QtCore import QSettings  # noqa: E402
 from modultool.logger import logger  # noqa: E402
 from app import MainWindow  # noqa: E402
 from modultool import config  # noqa: E402
@@ -195,4 +196,18 @@ def test_toggle_maximize_restores_state(monkeypatch):
     window.toggle_maximize()
     assert not window.isMaximized()
     window.close()
+    app.quit()
+
+
+def test_window_geometry_persist(tmp_path, monkeypatch):
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path))
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+    window.resize(900, 700)
+    window.show()
+    app.processEvents()
+    window.close()
+    settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "modul-tool", "main")
+    assert settings.value("geometry") is not None
     app.quit()
