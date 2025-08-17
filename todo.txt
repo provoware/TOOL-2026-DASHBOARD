@@ -12,3 +12,6 @@
 - Tab: High-Contrast-Theme für Buttons & Eingabefelder erweitern (highcontrast.qss)
 - Ukf: Fenster-Mindestgröße und Dark-Buttons (app.py, dark.qss)
 - T51: Dashboard-Tests anpassen (tests/test_app.py)
+- Ufa: Automatische Tests für Theme-Lader (tests/test_theme_loader.py)
+- Ufb: GitHub-Action für Tests (.github/workflows/tests.yml)
+- Ufc: Statische Typprüfung mit mypy (mypy.ini)

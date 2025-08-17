@@ -52,3 +52,4 @@ T48 Genresarchiv Untermodul :: 2025-08-17
 T49 Light Theme :: 2025-08-17
 T50 High-Contrast Buttons :: 2025-08-17
 T51 Dashboard-Tests anpassen :: 2025-08-17
+T52 README Installation :: 2025-08-17

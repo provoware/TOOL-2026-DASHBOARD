@@ -58,6 +58,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T49 (P2) Light Theme :: Helles Theme für Tageslicht :: 'light' auswählbar und Stylesheet vorhanden
 - [x] T50 (P2) High-Contrast Buttons :: Buttons und Eingabefelder klar erkennbar :: Stylesheet für QPushButton und QLineEdit
 - [x] T51 (P2) Dashboard-Tests anpassen :: Tests reflektieren Spezialkarten :: tests/test_app.py grün
+- [x] T52 (P2) README Installation :: README erklärt Installation :: Abschnitt "Installation" mit `pip install -e .`
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode
