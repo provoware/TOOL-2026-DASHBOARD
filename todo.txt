@@ -10,3 +10,4 @@
 - Uka: Genre-Schnelleingabe im Dashboard (app.py)
 - Ukb: Test für Dashboard-Genre-Schnelleingabe (tests/test_dashboard_quick_entry.py)
 - Tab: High-Contrast-Theme für Buttons & Eingabefelder erweitern (highcontrast.qss)
+- Ukf: Fenster-Mindestgröße und Dark-Buttons (app.py, dark.qss)

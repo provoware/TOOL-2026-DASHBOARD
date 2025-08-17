@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
     QStyle,
 )
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QKeySequence, QShortcut
+from PySide6.QtGui import QKeySequence, QShortcut, QFont
 from modultool.settings_panel import SettingsDialog
 from modultool import config
 
@@ -37,6 +37,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("ModulTool")
+        self.setMinimumSize(800, 600)
 
         self.genre_archive = GenreArchiveWidget()
         self.genre_archive.hide()
@@ -266,6 +267,7 @@ class MainWindow(QMainWindow):
 def main() -> int:
     """Start the GUI application."""
     app = QApplication(sys.argv)
+    app.setFont(QFont("Arial", 12))
     apply_theme(app, "dark")
     window = MainWindow()
     window.show()
