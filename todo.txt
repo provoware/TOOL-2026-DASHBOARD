@@ -7,3 +7,5 @@
 - T48: Genresarchiv Untermodul testen (database_module.py, genre_archive_module.py)
 
 - T49: helles Theme einfügen (settings_panel.py, light.qss)
+- Uka: Genre-Schnelleingabe im Dashboard (app.py)
+- Ukb: Test für Dashboard-Genre-Schnelleingabe (tests/test_dashboard_quick_entry.py)

@@ -1,6 +1,7 @@
 from functools import partial
 from PySide6.QtWidgets import (
     QApplication,
+    QComboBox,
     QGridLayout,
     QHBoxLayout,
     QLabel,
@@ -26,6 +27,7 @@ from modultool.onboarding import show_onboarding
 from modultool.event_bus import event_bus
 from modultool.stats import stats
 from modultool.modules.database_module import DatabaseModule
+from modultool.modules.genre_archive_module import GenreArchiveWidget
 import sys
 
 
@@ -35,6 +37,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("ModulTool")
+
+        self.genre_archive = GenreArchiveWidget()
+        self.genre_archive.hide()
 
         self.current_theme = "dark"
         self._module_maximized = False
@@ -117,21 +122,32 @@ class MainWindow(QMainWindow):
             if i == 0:
                 button = QPushButton("Datenbank", objectName="db_button")
                 button.setStyleSheet(
-                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;",
                 )
                 button.clicked.connect(self.open_database_module)
                 card_layout.addWidget(button)
                 hint = QLabel("Verwaltet die Datenbank", objectName="db_hint")
                 hint.setAlignment(Qt.AlignCenter)
                 card_layout.addWidget(hint)
+            elif i == 1:
+                self.quick_cat_combo = QComboBox(objectName="quick_cat")
+                self.quick_cat_combo.setEditable(True)
+                self.quick_genre_edit = QLineEdit(objectName="quick_genre")
+                self.quick_genre_edit.setPlaceholderText("Genre1, Genre2")
+                add_btn = QPushButton("Hinzufügen", objectName="quick_add")
+                add_btn.clicked.connect(self.add_genres_quick)
+                self.quick_genre_edit.returnPressed.connect(self.add_genres_quick)
+                card_layout.addWidget(self.quick_cat_combo)
+                card_layout.addWidget(self.quick_genre_edit)
+                card_layout.addWidget(add_btn)
+                self.refresh_quick_entry_categories()
             else:
                 button = QPushButton(f"Card {i + 1}", objectName=f"card_button{i + 1}")
                 button.setStyleSheet(
-                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;"
+                    f"border: 2px solid {colors[i]}; background-color: {colors[i]}33;",
                 )
                 button.clicked.connect(partial(self.handle_card_clicked, i))
                 card_layout.addWidget(button)
-
             grid.addWidget(card, i // 3, i % 3)
         layout.addWidget(dashboard)
 
@@ -193,6 +209,24 @@ class MainWindow(QMainWindow):
         """Open the database management window."""
         db = DatabaseModule()
         db.start()
+
+    def refresh_quick_entry_categories(self) -> None:
+        self.quick_cat_combo.clear()
+        self.quick_cat_combo.addItems(
+            sorted(self.genre_archive.categories.keys(), key=str.lower)
+        )
+
+    def add_genres_quick(self) -> None:
+        category = self.quick_cat_combo.currentText().strip()
+        genres = [
+            g.strip() for g in self.quick_genre_edit.text().split(",") if g.strip()
+        ]
+        if not category or not genres:
+            return
+        self.genre_archive.add_genres(category, genres)
+        self.quick_genre_edit.clear()
+        self.refresh_quick_entry_categories()
+        self.statusBar().showMessage("Genres hinzugefügt")
 
     def update_stats_labels(self, *args) -> None:
         """Refresh statistics labels with current values."""
