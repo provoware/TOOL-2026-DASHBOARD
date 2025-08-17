@@ -1,3 +1,4 @@
+- [x] Uee: Theme-Dokumentation (docs/themes.md)
 T41 abgeschlossen - Edit-Icon Karten.
 
 - T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
