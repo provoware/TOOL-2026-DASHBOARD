@@ -59,6 +59,10 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T50 (P2) High-Contrast Buttons :: Buttons und Eingabefelder klar erkennbar :: Stylesheet für QPushButton und QLineEdit
 - [x] T51 (P2) Dashboard-Tests anpassen :: Tests reflektieren Spezialkarten :: tests/test_app.py grün
 - [x] T52 (P2) README Installation :: README erklärt Installation :: Abschnitt "Installation" mit `pip install -e .`
+- [x] T53 (P2) Kontrastwarnung Theme-Lader :: Log-Warnung bei zu geringem Kontrast :: Warnung bei Ratio <4.5
+- [x] T54 (P2) Theme beim Start merken :: App lädt gespeichertes Theme :: Theme aus Config bei Start
+- [x] T55 (P2) Nutzer-Theme-Verzeichnis :: Themes aus Nutzerordner laden :: Nutzer-Theme überschreibt Standard
+- [x] T56 (P2) Kontrastprüf-Skript :: Skript prüft Theme-Kontraste :: Warnung bei Ratio <4.5
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

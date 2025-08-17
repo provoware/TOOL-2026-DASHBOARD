@@ -20,7 +20,7 @@ from modultool.settings_panel import SettingsDialog
 from modultool import config
 
 from modultool.logger import logger
-from modultool.theme_loader import apply_theme
+from modultool.theme_loader import apply_theme, load_user_theme
 from modultool.help_engine import register_help, create_help_dialog
 from modultool.selfcheck import selfcheck_scheduler
 from modultool.onboarding import show_onboarding
@@ -34,7 +34,7 @@ import sys
 class MainWindow(QMainWindow):
     """Simple start window for the tool."""
 
-    def __init__(self):
+    def __init__(self, current_theme: str = "dark"):
         super().__init__()
         self.setWindowTitle("ModulTool")
         self.setMinimumSize(800, 600)
@@ -42,7 +42,10 @@ class MainWindow(QMainWindow):
         self.genre_archive = GenreArchiveWidget()
         self.genre_archive.hide()
 
-        self.current_theme = "dark"
+        self.genre_archive = GenreArchiveWidget()
+        self.genre_archive.hide()
+
+        self.current_theme = current_theme
         self._module_maximized = False
         QShortcut(QKeySequence("F1"), self, activated=self.show_help)
         QShortcut(QKeySequence("F6"), self, activated=self.toggle_theme)
@@ -269,6 +272,9 @@ def main() -> int:
     """Start the GUI application."""
     app = QApplication(sys.argv)
     app.setFont(QFont("Arial", 12))
+    current_theme = load_user_theme()
+    apply_theme(app, current_theme)
+    window = MainWindow(current_theme=current_theme)
     apply_theme(app, "dark")
     window = MainWindow()
     window.show()

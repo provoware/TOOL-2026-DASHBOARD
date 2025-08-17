@@ -11,6 +11,8 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QFont
 
+import json
+from . import config
 from .theme_loader import apply_theme
 
 
@@ -46,4 +48,10 @@ class SettingsDialog(QDialog):
         font = QFont(self.app.font())
         font.setPointSize(self.font_spin.value())
         self.app.setFont(font)
+        cfg = config.get_user_config_file()
+        cfg.parent.mkdir(parents=True, exist_ok=True)
+        cfg.write_text(
+            json.dumps({"theme": self.theme_combo.currentText()}, ensure_ascii=False),
+            encoding="utf-8",
+        )
         self.accept()

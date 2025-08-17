@@ -53,3 +53,7 @@ T49 Light Theme :: 2025-08-17
 T50 High-Contrast Buttons :: 2025-08-17
 T51 Dashboard-Tests anpassen :: 2025-08-17
 T52 README Installation :: 2025-08-17
+T53 Kontrastwarnung Theme-Lader :: 2025-08-17
+T54 Theme beim Start merken :: 2025-08-17
+T55 Nutzer-Theme-Verzeichnis :: 2025-08-17
+T56 Kontrastprüf-Skript :: 2025-08-17
