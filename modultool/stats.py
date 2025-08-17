@@ -27,8 +27,16 @@ class StatsManager:
         event_bus.subscribe("error.occurred", self.record_error)
 
     def _save(self) -> None:
-        with self.file.open("w", encoding="utf-8") as f:
-            json.dump({"modules": self.modules, "errors": self.error_count}, f, indent=2, ensure_ascii=False)
+        try:
+            with self.file.open("w", encoding="utf-8") as f:
+                json.dump(
+                    {"modules": self.modules, "errors": self.error_count},
+                    f,
+                    indent=2,
+                    ensure_ascii=False,
+                )
+        except OSError as err:
+            logger.error("Speichern fehlgeschlagen: %s", err)
 
     def record_open(self, module: str) -> None:
         """Increase counter for the given module name."""

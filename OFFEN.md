@@ -48,9 +48,22 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] T39 (P2) Sidebar-Icons und Suchfeld :: Links Symbole + Suchbox :: Buttons zeigen Icons
 - [x] T40 (P2) Karten farbig rahmen :: Jede Karte hat bunten Rahmen/Hintergrund :: StyleSheet f\u00fcr QPushButton
 - [x] T41 (P2) Edit-Icon je Karte :: Kleines Symbol oben rechts :: Klick loggt "edit"
-- [ ] T41 (P2) Edit-Icon je Karte :: Kleines Symbol oben rechts :: Klick loggt "edit"
 - [x] T42 (P2) Rechte Spalte als Groupbox :: Bereiche Einstellungen/Hilfe/Statistik gruppiert :: QGroupBox-Stil
 - [x] T43 (P2) Stats live anzeigen :: Fehlerz\u00e4hler und meistgenutztes Modul :: Werte aktualisieren sich
+- [x] T44 (P2) Version automatisch laden :: Version aus Paketinfo lesen :: APP_VERSION wird dynamisch gesetzt
+- [x] T45 (P2) Log-Level per Variable :: Umgebungsvariable steuert Logging :: MODULTOOL_LOG_LEVEL wird ausgewertet
+- [x] T46 (P2) Fehler beim Speichern abfangen :: Statistik-Speicherung robust :: OSError wird geloggt
+- [x] T47 (P2) Datenbank-Button Dashboard :: Button öffnet DB-Fenster :: Klick erstellt fehlende Datenbank
+- [x] T48 (P2) Genresarchiv Untermodul :: Kategorien-Archiv mit Zufallsgenerator :: Ausgabe kopiert und geloggt
+- [x] T49 (P2) Light Theme :: Helles Theme für Tageslicht :: 'light' auswählbar und Stylesheet vorhanden
+- [x] T50 (P2) High-Contrast Buttons :: Buttons und Eingabefelder klar erkennbar :: Stylesheet für QPushButton und QLineEdit
+- [x] T51 (P2) Dashboard-Tests anpassen :: Tests reflektieren Spezialkarten :: tests/test_app.py grün
+- [x] T52 (P2) README Installation :: README erklärt Installation :: Abschnitt "Installation" mit `pip install -e .`
+- [x] T53 (P2) Kontrastwarnung Theme-Lader :: Log-Warnung bei zu geringem Kontrast :: Warnung bei Ratio <4.5
+- [x] T54 (P2) Theme beim Start merken :: App lädt gespeichertes Theme :: Theme aus Config bei Start
+- [x] T55 (P2) Nutzer-Theme-Verzeichnis :: Themes aus Nutzerordner laden :: Nutzer-Theme überschreibt Standard
+- [x] T56 (P2) Kontrastprüf-Skript :: Skript prüft Theme-Kontraste :: Warnung bei Ratio <4.5
+- [x] T57 (P2) Farb-Layout an Vorlage :: Farben und Layout laut LAYOUT.png :: Sidebar/Randfarben und Karten angepasst
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

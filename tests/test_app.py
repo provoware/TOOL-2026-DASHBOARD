@@ -42,8 +42,8 @@ def test_dashboard_has_nine_cards():
     app = QApplication.instance() or QApplication([])
     window = MainWindow()
     dashboard = window.findChild(QWidget, "dashboard")
-    buttons = [dashboard.findChild(QPushButton, f"card_button{i+1}") for i in range(9)]
-    assert all(btn is not None for btn in buttons)
+    cards = [dashboard.findChild(QWidget, f"card{i+1}") for i in range(9)]
+    assert all(card is not None for card in cards)
     window.close()
     app.quit()
 
@@ -78,10 +78,10 @@ def test_statusbar_updates_on_click():
     assert statusbar.currentMessage() == expected
 
     dashboard = window.findChild(QWidget, "dashboard")
-    button = dashboard.findChild(QPushButton, "card_button1")
+    button = dashboard.findChild(QPushButton, "card_button3")
     button.click()
 
-    assert statusbar.currentMessage() == "Card 1 clicked"
+    assert statusbar.currentMessage() == "Card 3 clicked"
     window.close()
     app.quit()
 
@@ -129,9 +129,12 @@ def test_cards_have_colored_frames():
     window = MainWindow()
 
     dashboard = window.findChild(QWidget, "dashboard")
-    buttons = [dashboard.findChild(QPushButton, f"card_button{i+1}") for i in range(9)]
-    buttons = dashboard.findChildren(QPushButton)
-    assert all("border" in btn.styleSheet() for btn in buttons)
+    buttons = [
+        btn
+        for btn in dashboard.findChildren(QPushButton)
+        if btn.objectName().startswith("card_button")
+    ]
+    assert len(buttons) == 8 and all("border" in btn.styleSheet() for btn in buttons)
     window.close()
     app.quit()
 
