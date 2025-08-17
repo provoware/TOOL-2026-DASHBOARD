@@ -28,6 +28,16 @@ def test_window_title():
     app.quit()
 
 
+def test_minimum_window_size():
+    os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+    app = QApplication.instance() or QApplication([])
+    window = MainWindow()
+    min_size = window.minimumSize()
+    assert min_size.width() == 640 and min_size.height() == 480
+    window.close()
+    app.quit()
+
+
 def test_header_text():
     os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
     app = QApplication.instance() or QApplication([])

@@ -68,6 +68,7 @@ Format: - [ ] ID (Phase) Titel :: Ziel :: Akzeptanz
 - [x] UX2 (P2) Kartenlayout kleine Fenster :: Spalten passen sich an :: QGridLayout mit Spalten-Stretch
 - [x] UX3 (P2) Material-Theme :: Modernes Farbschema verfügbar :: material.qss + Auswahl im Settings-Dialog
 - [x] UX4 (P2) Fenstergröße merken :: Letzte Größe beim Start laden :: QSettings speichert Geometrie
+- [x] UX5 (P2) Fenster-Mindestgröße & dunkle Buttons :: Fenster nicht kleiner als 640x480, Buttons im Dark-Theme dunkler :: Mindestgröße gesetzt und Buttons angepasst
 
 ## S (Stretch)
 - [x] TS1 (S) Sandbox Mode

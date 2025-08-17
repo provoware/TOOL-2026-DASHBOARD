@@ -38,7 +38,7 @@ class MainWindow(QMainWindow):
     def __init__(self, current_theme: str = "dark"):
         super().__init__()
         self.setWindowTitle("ModulTool")
-        self.setMinimumSize(800, 600)
+        self.setMinimumSize(640, 480)
 
         self.settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "modul-tool", "main")
 
@@ -292,6 +292,8 @@ def main() -> int:
     geometry = window.settings.value("geometry", QByteArray(), type=QByteArray)
     if not geometry.isEmpty():
         window.restoreGeometry(geometry)
+    else:
+        window.resize(1024, 768)
     window.show()
     show_onboarding(window)
     selfcheck_scheduler.start()
