@@ -1,3 +1,4 @@
+T41 abgeschlossen - Edit-Icon Karten.
 
 - T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
 - T44: Version automatisch laden (config.py)
