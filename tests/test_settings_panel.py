@@ -15,11 +15,17 @@ def test_settings_dialog_applies_changes(tmp_path, monkeypatch):
     )
 
     monkeypatch.setattr(config, "get_theme_dir", lambda: theme_dir)
+    monkeypatch.setattr(
+        config, "get_user_config_file", lambda: tmp_path / "config.json"
+    )
     app = QApplication.instance() or QApplication([])
     dialog = SettingsDialog(app, "dark")
     dialog.theme_combo.setCurrentText("highcontrast")
     dialog.font_spin.setValue(app.font().pointSize() + 1)
     dialog.apply_settings()
+    assert (tmp_path / "config.json").read_text(
+        encoding="utf-8"
+    ) == '{"theme": "highcontrast"}'
 
     assert "#ff0" in app.styleSheet()
     assert app.font().pointSize() == dialog.font_spin.value()

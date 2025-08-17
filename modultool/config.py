@@ -58,6 +58,16 @@ def get_theme_dir() -> Path:
     return get_data_dir() / "themes"
 
 
+def get_user_config_file() -> Path:
+    """Return path to user config file."""
+    return Path.home() / ".modultool" / "config.json"
+
+
+def get_user_theme_dir() -> Path:
+    """Return user theme directory."""
+    return Path.home() / ".modultool" / "themes"
+
+
 def get_log_dir() -> Path:
     """Return directory for log files."""
     return get_root_dir() / "logs"

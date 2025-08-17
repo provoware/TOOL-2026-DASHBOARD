@@ -16,3 +16,6 @@
 - Ufb: GitHub-Action für Tests (.github/workflows/tests.yml)
 - Ufc: Statische Typprüfung mit mypy (mypy.ini)
 - T53: Kontrastwarnung im Theme-Lader (theme_loader.py)
+- Ula: Schriftgröße ebenfalls speichern (settings_panel.py)
+- Ulb: Theme-Verzeichnis automatisch erstellen (theme_loader.py)
+- Ulc: Kontrastwerte in Datei speichern (scripts/check_colorblindness.py)

@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 
 from PySide6.QtWidgets import QApplication
+import json
 
 from . import config
 from .logger import logger
@@ -29,8 +30,23 @@ def _contrast_ratio(bg: str, fg: str) -> float:
     return (l1 + 0.05) / (l2 + 0.05)
 
 
+def load_user_theme() -> str:
+    """Return theme name stored in user config file."""
+    cfg = config.get_user_config_file()
+    if cfg.exists():
+        try:
+            data = json.loads(cfg.read_text(encoding="utf-8"))
+            return data.get("theme", "dark")
+        except json.JSONDecodeError:
+            logger.warning("invalid config file: %s", cfg)
+    return "dark"
+
+
 def get_theme_path(name: str) -> Path:
     """Return path to the given theme stylesheet."""
+    user_file = config.get_user_theme_dir() / f"{name}.qss"
+    if user_file.exists():
+        return user_file
     return config.get_theme_dir() / f"{name}.qss"
 
 
