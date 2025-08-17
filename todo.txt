@@ -1,1 +1,18 @@
 
+- T41: OFFEN-Liste bereinigt (Edit-Icon je Karte)
+- T44: Version automatisch laden (config.py)
+- T45: Log-Level per Variable steuern (logger.py)
+- T46: Fehler beim Speichern abfangen (stats.py)
+- T47: Datenbank-Button testen (app.py, database_module.py)
+- T48: Genresarchiv Untermodul testen (database_module.py, genre_archive_module.py)
+
+- T49: helles Theme einfügen (settings_panel.py, light.qss)
+- Uka: Genre-Schnelleingabe im Dashboard (app.py)
+- Ukb: Test für Dashboard-Genre-Schnelleingabe (tests/test_dashboard_quick_entry.py)
+- Tab: High-Contrast-Theme für Buttons & Eingabefelder erweitern (highcontrast.qss)
+- Ukf: Fenster-Mindestgröße und Dark-Buttons (app.py, dark.qss)
+- T51: Dashboard-Tests anpassen (tests/test_app.py)
+- Ufa: Automatische Tests für Theme-Lader (tests/test_theme_loader.py)
+- Ufb: GitHub-Action für Tests (.github/workflows/tests.yml)
+- Ufc: Statische Typprüfung mit mypy (mypy.ini)
+- T53: Kontrastwarnung im Theme-Lader (theme_loader.py)
